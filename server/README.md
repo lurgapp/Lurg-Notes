@@ -84,28 +84,16 @@ Lurg download URLs; changing a public distribution host requires a coordinated
 client and release-service configuration change. Push delivery is disabled
 when Firebase is not configured.
 
-## Source scope and export changes
+## Shared components
 
-`app/modules/notes/`, the shared auth/identity/Graph/app/outbox implementations,
-AI providers, runtime helpers, `schema.sql`, requirements and all Alembic files
-are copied from `backend/` in the source workspace. Their application logic
-and migration history are preserved. This includes shared schema tables for
-chat, connectors and administration because the original migrations refer to
-them; their presence does not expose those HTTP APIs.
+Notes reuses the Lurg authentication, Graph, AI, app-release and outbox
+implementations. Graph candidate helpers live in `app/modules/chat/`, but the
+chat HTTP router is not registered. The complete Alembic chain retains shared
+platform tables because later Notes migrations depend on earlier revisions.
 
-The public export changes these supporting files:
-
-- `app/main.py`: standalone Notes entry point, selected router registration,
-  app-release push and outbox lifecycle, health/readiness and profile helpers.
-- `app/config.py`: empty owner email default and `lurg_notes` app default.
-- `.env.example`, `.dockerignore`, this README and `scripts/init_database.py`:
-  public setup with placeholders and empty-schema initialization.
-- `tests/conftest.py`: synthetic settings for unit tests.
-
-The original Notes regression tests and dependency tests for identity,
-security, AI/Graph extraction, safe fetch, outbox and release pushes are
-included. PostgreSQL fixture helpers are included so Notes realtime tests have
-their imports and full schema/migration prerequisites.
+`app.main` selects the Notes-related routers and background workers.
+`tests/conftest.py` provides synthetic unit-test settings;
+`scripts/init_database.py` initializes only an empty database schema.
 
 ## Verification
 

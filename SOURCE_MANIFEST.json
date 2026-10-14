@@ -16,13 +16,8 @@
       "kind": "generated"
     },
     {
-      "path": "GITHUB.md",
-      "sha256": "78a4e675ee78d08aed4410a01dfd1aae7fe59d62b10b6a710006c7d0082e0705",
-      "kind": "generated"
-    },
-    {
       "path": "README.md",
-      "sha256": "525fc5a24c5b11f3c9c5a04bafba33dc74af8d573ddf44c00b8e3fd40de4444f",
+      "sha256": "e4d54fae3a5d92139ba89afcd8bd9d615c80c9c259e1266f57cd31b75a4ba12b",
       "kind": "generated"
     },
     {
@@ -44,7 +39,7 @@
       "kind": "adapted",
       "source": "mobile-notes/android/app/build.gradle",
       "source_sha256": "a06aea3ec2c128c3297ec84df79341178f9ace6154e31cdd180d88e230a5d66e",
-      "note": "Standalone debug signing and optional Firebase configuration prepared by Grok."
+      "note": "Standalone debug signing and optional Firebase configuration."
     },
     {
       "path": "android/app/google-services.json.example",
@@ -603,9 +598,9 @@
       "kind": "generated"
     },
     {
-      "path": "docs/EXPORT.md",
-      "sha256": "a2ae030eb771ca6cedd58bbe513be9dfcb8e4474553741a0918ed810465c943b",
-      "kind": "generated"
+      "path": "docs/ARCHITECTURE.md",
+      "kind": "generated",
+      "sha256": "72158cb9deb0df1927d7a95760219822143e2134d89d9c1a6288be6729dc2bad"
     },
     {
       "path": "docs/LURG_NOTES.md",
@@ -616,9 +611,9 @@
       "note": "Relative protocol link and updated foreground LCP invalidation description."
     },
     {
-      "path": "docs/VALIDATION.md",
-      "sha256": "6966fbdb49abf01d005ab8a3b6bcfb90a1efb21e055695d6d2ca0df95f158018",
-      "kind": "generated"
+      "path": "docs/TESTING.md",
+      "kind": "generated",
+      "sha256": "bf575a2669cbca2086acb845b9a0c187fb9d1510ddb2d57c35c49658c36f7b5e"
     },
     {
       "path": "docs/lurg-notes-e2ee-v2.md",
@@ -657,7 +652,7 @@
     },
     {
       "path": "lcp/README.md",
-      "sha256": "8dd9da31ae39b082722daa5a51c93c1999cfcf7db28c36b1c324a3f974c0506b",
+      "sha256": "e4e6f9fa0fa3680b6e69143f68e305eacd9ed51bcf06716782bfcdb5a92903c8",
       "kind": "adapted",
       "source": "lcp/README.md",
       "source_sha256": "036043a075c866c6fceceb9244e376103cfdb8efa3b2964c76d8ea686d2c4055",
@@ -1069,7 +1064,7 @@
     },
     {
       "path": "server/README.md",
-      "sha256": "17110c5fd153de9de1092a224ef24d74daa76e917e62da9ee3b8083d7d889f22",
+      "sha256": "cedc40da79dea16844755a36b0a40d83a3376db12623cd9624a8e85741640a25",
       "kind": "generated"
     },
     {
@@ -1695,7 +1690,7 @@
     },
     {
       "path": "website/README.md",
-      "sha256": "0c3d39bec340be5ca86bc272bd14323a9888f0fa486d07e851bda7ee0d8b55f2",
+      "sha256": "625c54ce5ae227a06b453e6f7d047a377a1a09bec110160f5a1dbfa61b27374c",
       "kind": "generated"
     },
     {
