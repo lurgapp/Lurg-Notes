@@ -1,0 +1,24 @@
+# OSX
+#
+.DS_Store
+
+# Android/IntelliJ
+#
+build/
+.idea
+.gradle
+local.properties
+*.iml
+*.hprof
+.cxx/
+
+# Bundle artifacts
+*.jsbundle
+
+# Signing and Firebase. Add your own locally; do not commit them.
+google-services.json
+*.keystore
+*.jks
+*.apk
+*.aab
+signing.properties

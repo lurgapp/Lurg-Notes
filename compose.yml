@@ -1,0 +1,73 @@
+services:
+  db:
+    image: pgvector/pgvector:pg16
+    environment:
+      POSTGRES_DB: notes
+      POSTGRES_USER: notes
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in .env}
+    volumes:
+      - notes_db:/var/lib/postgresql/data
+      - ./server/schema.sql:/docker-entrypoint-initdb.d/01-schema.sql:ro
+    healthcheck:
+      test: [CMD-SHELL, "pg_isready -U notes -d notes"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  redis:
+    image: redis:7.4-alpine
+    command: [redis-server, --appendonly, "yes"]
+    volumes:
+      - notes_redis:/data
+    healthcheck:
+      test: [CMD, redis-cli, ping]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+  backend:
+    build: ./server
+    environment:
+      DATABASE_URL: postgresql+asyncpg://notes:${POSTGRES_PASSWORD:?Set POSTGRES_PASSWORD in .env}@db:5432/notes
+      JWT_SECRET: ${JWT_SECRET:?Set JWT_SECRET in .env}
+      COOKIE_DOMAIN: ""
+      COOKIE_SECURE: "false"
+      CORS_ORIGINS: http://localhost:3000,http://127.0.0.1:3000
+      AUTH_ALLOWED_APPS: lurg_notes
+      AUTH_OTP_HMAC_SECRET: ${AUTH_OTP_HMAC_SECRET:?Set AUTH_OTP_HMAC_SECRET in .env}
+      BREVO_API_KEY: ${BREVO_API_KEY:-}
+      BREVO_SENDER_EMAIL: ${BREVO_SENDER_EMAIL:-}
+      BREVO_TEMPLATE_VERIFY_EMAIL_ID: ${BREVO_TEMPLATE_VERIFY_EMAIL_ID:-0}
+      AI_PROVIDER: ${AI_PROVIDER:-openrouter}
+      OPENROUTER_API_KEY: ${OPENROUTER_API_KEY:-}
+      GEMINI_API_KEY: ${GEMINI_API_KEY:-}
+      WEB_SEARCH_ENABLED: "false"
+      LCP_EVENT_BUS_REDIS_URL: redis://redis:6379/0
+      LCP_INTERNAL_TOKEN: ${LCP_INTERNAL_TOKEN:?Set LCP_INTERNAL_TOKEN in .env}
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+    ports:
+      - "127.0.0.1:8000:8000"
+
+  gateway:
+    build: ./lcp
+    environment:
+      REDIS_URL: redis://redis:6379/0
+      AUTH_JWT_SECRET: ${JWT_SECRET:?Set JWT_SECRET in .env}
+      AUTH_SESSION_STATUS_URL: http://backend:8000/v1/auth/internal/session-status
+      LCP_INTERNAL_TOKEN: ${LCP_INTERNAL_TOKEN:?Set LCP_INTERNAL_TOKEN in .env}
+      LCP_LEGACY_PUBSUB_ENABLED: "false"
+    depends_on:
+      backend:
+        condition: service_started
+      redis:
+        condition: service_healthy
+    ports:
+      - "127.0.0.1:8001:8000"
+
+volumes:
+  notes_db:
+  notes_redis:

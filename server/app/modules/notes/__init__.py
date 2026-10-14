@@ -1,0 +1,1 @@
+"""Lurg Notes product module."""

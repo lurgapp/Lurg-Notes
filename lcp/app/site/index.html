@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="LCP — транспорт авторизации, RPC и событий для сервисов Lurg. Управляемые сессии и восстановление событий при коротком переподключении.">
+  <meta name="theme-color" content="#f8f9fb">
+  <title>LCP — Lurg Connection Protocol</title>
+  <style>
+    :root{--bg:#f8f9fb;--paper:#fff;--ink:#17212f;--muted:#607288;--line:#e6eaf0;--blue:#0676c7}
+    *{box-sizing:border-box}html{scroll-padding-top:90px}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif}a{color:inherit;text-decoration:none}a:focus-visible{outline:3px solid #1689e8;outline-offset:5px}::selection{background:#d8ecff}
+    .shell{width:min(1120px,calc(100% - 64px));margin-inline:auto}.header{border-bottom:1px solid var(--line);background:var(--bg)}.nav{min-height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px}.brand{display:inline-flex;gap:10px;align-items:center;font-size:21px;font-weight:670;letter-spacing:-.6px}.brand small{border-left:1px solid var(--line);padding-left:12px;margin-left:3px;color:var(--muted);font-size:16px;font-weight:450}.mark{display:grid;grid-template-columns:repeat(2,7px);gap:3px;width:22px;transform:rotate(-8deg)}.mark i{width:7px;height:7px;border-radius:2px;background:#1689e8}.mark i:last-child{opacity:.45}.nav-link{font-size:13px;color:var(--muted)}
+    .hero{padding:80px 0 50px;display:grid;grid-template-columns:1.15fr .85fr;gap:56px;align-items:center}.eyebrow{color:var(--blue);font-size:12px;font-weight:600;letter-spacing:1.4px;text-transform:uppercase}.hero h1{font-size:clamp(36px,5.7vw,68px);font-weight:640;line-height:1.1;letter-spacing:-2.2px;margin:20px 0 24px}.hero h1 span{color:#1689e8}.hero p{color:var(--muted);font-size:clamp(16px,1.7vw,19px);margin:0;max-width:580px}.actions{display:flex;flex-wrap:wrap;gap:16px;align-items:center;margin-top:30px}.button{display:inline-flex;justify-content:center;align-items:center;min-height:48px;padding:12px 23px;border-radius:100px;background:var(--blue);color:#fff;font-size:14px;font-weight:560}.button:hover{background:#0569b1}.text-link{font-size:14px;color:var(--blue);padding:10px 0}
+    .diagram{padding:28px;border:1px solid #dfe8f1;border-radius:26px;background:#eff5fb}.diagram>p{font-size:12px;color:var(--muted);margin:0 0 20px}.node{background:#fff;border:1px solid var(--line);border-radius:16px;padding:17px 20px;line-height:1.5}.node b{display:block;font-size:15px;font-weight:600}.node small{display:block;color:var(--muted);font-size:12px;margin-top:3px}.node.center{background:var(--blue);border-color:var(--blue);color:#fff}.node.center small{color:#fff}.connector{height:23px;width:1px;background:#b8cfe2;margin-left:28px}.diagram .hint{font-size:11px;line-height:1.7;margin:18px 0 0}
+    .numbers{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;padding:28px 0 76px}.card{padding:27px;border:1px solid var(--line);background:var(--paper);border-radius:24px}.card strong{font-size:26px;font-weight:620;letter-spacing:-.6px;display:block;margin-bottom:10px}.card span,.card p{color:var(--muted);font-size:14px;margin:0;line-height:1.75}.section{border-top:1px solid var(--line);padding:70px 0}.section h2{font-size:clamp(29px,4vw,40px);font-weight:630;letter-spacing:-1.2px;line-height:1.2;max-width:680px;margin:15px 0 30px}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}.grid h3{font-size:17px;font-weight:600;margin:0 0 12px}.limits{margin-top:25px;padding:24px 28px;background:#edf4fb;border:1px solid #dfe8f1;border-radius:20px;color:var(--muted);font-size:14px}.limits b{color:var(--ink)}.integrations{display:grid;grid-template-columns:1fr 1fr;gap:18px}.integrations .card{padding:28px}.integrations h3{margin:0 0 12px;font-size:18px;font-weight:600}.tag{display:inline-block;font-size:11px;color:#0872c0;background:#edf6ff;padding:4px 10px;border-radius:30px;margin-bottom:15px}footer{padding:28px 0 38px;border-top:1px solid var(--line);display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;color:var(--muted);font-size:13px}footer a:hover{color:var(--blue)}
+    @media(max-width:800px){.shell{width:calc(100% - 40px)}.hero{grid-template-columns:1fr;gap:32px;padding:48px 0 30px}.hero h1{letter-spacing:-1.5px;max-width:640px}.diagram{max-width:600px}.numbers,.grid{grid-template-columns:1fr;gap:14px}.numbers{padding:16px 0 48px}.card{padding:24px}.section{padding:48px 0}.integrations{grid-template-columns:1fr}.limits{padding:22px}.brand small{font-size:14px}.nav-link{font-size:12px}.hero p{max-width:600px}}
+    @media(prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+  </style>
+</head>
+<body>
+  <header class="header"><nav class="shell nav" aria-label="Основная навигация">
+    <a class="brand" href="https://lurg.pro/" aria-label="Lurg — главная"><span class="mark" aria-hidden="true"><i></i><i></i><i></i><i></i></span>Lurg <small>LCP</small></a>
+    <a class="nav-link" href="#protocol">О протоколе ↓</a>
+  </nav></header>
+  <main class="shell">
+    <section class="hero">
+      <div><div class="eyebrow">Lurg Connection Protocol</div>
+        <h1>Один канал.<br><span>Связанные сервисы.</span></h1>
+        <p>LCP объединяет авторизацию, запросы и события в одном WebSocket-подключении. Сессия помогает продолжить работу после короткого разрыва связи.</p>
+        <div class="actions"><a class="button" href="#protocol">Как это работает</a><a class="text-link" href="/health/ready">Готовность gateway ↗</a></div>
+      </div>
+      <div class="diagram" aria-label="Схема соединения клиента через LCP с сервисами">
+        <p>Один транспорт, отдельная логика продуктов</p>
+        <div class="node"><b>Клиент Lurg</b><small>Авторизация · запросы · подписки</small></div>
+        <div class="connector"></div><div class="node center"><b>LCP Gateway</b><small>Сессии · ACK · восстановление событий</small></div>
+        <div class="connector"></div><div class="node"><b>Сервисы экосистемы</b><small>Nearby RPC · Graph events · канал Notes</small></div>
+        <p class="hint">Подключение продукта к LCP не заменяет его API, базу данных и правила доступа.</p>
+      </div>
+    </section>
+    <section class="numbers" aria-label="Возможности транспорта">
+      <article class="card"><strong>WSS</strong><span>Одно защищённое подключение с управляемой сессией и ограничениями нагрузки.</span></article>
+      <article class="card"><strong>ACK + replay</strong><span>Подтверждение последовательности и повтор событий в пределах окна хранения.</span></article>
+      <article class="card"><strong>Формат v1</strong><span>HELLO, авторизация, RPC и подписки с явными ответами и ошибками. Версия gateway — 0.1.</span></article>
+    </section>
+    <section id="protocol" class="section">
+      <div class="eyebrow">Как это устроено</div><h2>Соединение может прерваться.<br>Работа должна продолжиться.</h2>
+      <div class="grid">
+        <article class="card"><h3>События по порядку</h3><p>Gateway присваивает событиям номера. Клиент подтверждает полученную последовательность и запрашивает оставшиеся события при восстановлении.</p></article>
+        <article class="card"><h3>Актуальная сессия</h3><p>После resume поколение сессии меняется. Старое подключение теряет право выполнять новые запросы; logout завершает сессию.</p></article>
+        <article class="card"><h3>Личные подписки</h3><p>События Graph и Notes привязаны к владельцу аккаунта. Публичные изменения Nearby передаются отдельно от личных данных.</p></article>
+      </div>
+      <p class="limits"><b>Восстановление ограничено:</b> по умолчанию до 10 минут и 10&nbsp;000 событий на сессию. Если окно истекло, клиент получает явную ошибку и должен загрузить актуальное состояние через API. ACK подтверждает получение события, а успешное изменение данных подтверждает сервис.</p>
+    </section>
+    <section class="section">
+      <div class="eyebrow">Интеграции</div><h2>Транспорт общий.<br>Данные остаются у продуктов.</h2>
+      <div class="integrations">
+        <article class="card"><span class="tag">События и RPC</span><h3>Nearby и Graph</h3><p>Gateway выполняет поддерживаемые RPC Nearby и передаёт публичные события. Graph публикует приватные уведомления об изменениях; данные графа загружаются через его HTTP API.</p></article>
+        <article class="card"><span class="tag">HTTP-синхронизация</span><h3>Lurg Notes</h3><p>Приложение синхронизирует документы через HTTP и курсор изменений. В LCP предусмотрен приватный канал уведомлений Notes; его использование клиентом требует отдельной интеграции.</p></article>
+      </div>
+    </section>
+  </main>
+  <footer class="shell"><a href="https://lurg.pro/">© Lurg</a><span>LCP Gateway · v0.1</span><a href="https://notes.lurg.pro/">Lurg Notes ↗</a></footer>
+</body>
+</html>

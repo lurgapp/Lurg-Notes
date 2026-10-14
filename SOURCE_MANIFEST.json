@@ -1,0 +1,1808 @@
+{
+  "schema_version": 1,
+  "product": "Lurg Notes",
+  "android_version": "0.5.4",
+  "snapshot_date": "2026-10-14",
+  "notes": "Current native Android release and its active server, gateway and website source dependencies. Historical Expo sources, unused compatibility plugin, design concepts, secrets, generated outputs and original Git history are excluded.",
+  "exported_files": [
+    {
+      "path": ".env.example",
+      "sha256": "466b0ed3f9c7671850f1d21a1679cd15687e21878642c4040d3cf8a9fc4bca2e",
+      "kind": "generated"
+    },
+    {
+      "path": ".gitignore",
+      "sha256": "32a714a2c0ae3f9f454c3138804f076df9bb0f31d12928325554d8f2f220891d",
+      "kind": "generated"
+    },
+    {
+      "path": "GITHUB.md",
+      "sha256": "78a4e675ee78d08aed4410a01dfd1aae7fe59d62b10b6a710006c7d0082e0705",
+      "kind": "generated"
+    },
+    {
+      "path": "README.md",
+      "sha256": "525fc5a24c5b11f3c9c5a04bafba33dc74af8d573ddf44c00b8e3fd40de4444f",
+      "kind": "generated"
+    },
+    {
+      "path": "android/.gitignore",
+      "sha256": "35db0a5063ad5a6196111c6ec96191ccb9f726cad325f89a79387948e4d82cc7",
+      "kind": "adapted",
+      "source": "mobile-notes/android/.gitignore",
+      "source_sha256": "03263c9a1436e264a87c6e0547007488dc980efb2326724b5a85c0835bac34a7",
+      "note": "Public export ignores private signing properties."
+    },
+    {
+      "path": "android/README.md",
+      "sha256": "367d41d52942c6c2c5c33fd33affbc3251a61bb8db33db79829e1fbcf0705d73",
+      "kind": "generated"
+    },
+    {
+      "path": "android/app/build.gradle",
+      "sha256": "b56b5e6103d6c5404501d8a77fefc947a72050abeb6c11843d73af209b96aa5e",
+      "kind": "adapted",
+      "source": "mobile-notes/android/app/build.gradle",
+      "source_sha256": "a06aea3ec2c128c3297ec84df79341178f9ace6154e31cdd180d88e230a5d66e",
+      "note": "Standalone debug signing and optional Firebase configuration prepared by Grok."
+    },
+    {
+      "path": "android/app/google-services.json.example",
+      "sha256": "80ce54046de2545d7db22b00a048962e19d593f31bc2575c78133b43533ffa4f",
+      "kind": "generated"
+    },
+    {
+      "path": "android/app/proguard-rules.pro",
+      "sha256": "8bd4d7b69a1d78e8322b459b5e8d48234adce7481df04da34c0140d52ffb367a",
+      "kind": "copied",
+      "source": "mobile-notes/android/app/proguard-rules.pro",
+      "source_sha256": "8bd4d7b69a1d78e8322b459b5e8d48234adce7481df04da34c0140d52ffb367a"
+    },
+    {
+      "path": "android/app/src/androidTest/java/pro/lurg/notes/NativeNotesEditorUiTest.kt",
+      "sha256": "aae61141b549b934ed0e9d87ecd942f1445e0d9006db016b5c6fb285b30f80ec",
+      "kind": "copied",
+      "source": "mobile-notes/android/app/src/androidTest/java/pro/lurg/notes/NativeNotesEditorUiTest.kt",
+      "source_sha256": "aae61141b549b934ed0e9d87ecd942f1445e0d9006db016b5c6fb285b30f80ec"
+    },
+    {
+      "path": "android/app/src/androidTest/java/pro/lurg/notes/NativeNotesRealtimeTest.kt",
+      "sha256": "a38a0274d7d6d0f232b72108107a82bf776769cb3911af0b613256cb0b1a0b6b",
+      "kind": "copied",
+      "source": "mobile-notes/android/app/src/androidTest/java/pro/lurg/notes/NativeNotesRealtimeTest.kt",
+      "source_sha256": "a38a0274d7d6d0f232b72108107a82bf776769cb3911af0b613256cb0b1a0b6b"
+    },
+    {
+      "path": "android/app/src/androidTest/java/pro/lurg/notes/NativeNotesSmokeTest.kt",
+      "sha256": "6dce604155159345109668139df4af08b1e02c77241c06ddad67060c57b82829",
+      "kind": "copied",
+      "source": "mobile-notes/android/app/src/androidTest/java/pro/lurg/notes/NativeNotesSmokeTest.kt",
+      "source_sha256": "6dce604155159345109668139df4af08b1e02c77241c06ddad67060c57b82829"
+    },
+    {
+      "path": "android/app/src/androidTest/java/pro/lurg/notes/NativeSyncSchedulingTest.kt",
+      "sha256": "65cde49f5552ac765059cac5d75b5f95fb348a722c7ea2daa08577668324bfa5",
+      "kind": "copied",
+      "source": "mobile-notes/android/app/src/androidTest/java/pro/lurg/notes/NativeSyncSchedulingTest.kt",
+      "source_sha256": "65cde49f5552ac765059cac5d75b5f95fb348a722c7ea2daa08577668324bfa5"
+    },
+    {
+      "path": "android/app/src/androidTest/java/pro/lurg/notes/NativeTextUploadOwnerBoundaryTest.kt",
+      "sha256": "b896720417ceb48add845376c533064fcf2952bd1c7024ae570db4a17492ff46",
+      "kind": "copied",
+      "source": "mobile-notes/android/app/src/androidTest/java/pro/lurg/notes/NativeTextUploadOwnerBoundaryTest.kt",
+      "source_sha256": "b896720417ceb48add845376c533064fcf2952bd1c7024ae570db4a17492ff46"
+    },
+    {
+      "path": "android/app/src/androidTest/java/pro/lurg/notes/NativeUpdaterSmokeTest.kt",
+      "sha256": "d0884bf06cf6b546275dbbe2fb10f29a7e0600283fb89df10768f104a9c3f690",
+      "kind": "copied",
+      "source": "mobile-notes/android/app/src/androidTest/java/pro/lurg/notes/NativeUpdaterSmokeTest.kt",
+      "source_sha256": "d0884bf06cf6b546275dbbe2fb10f29a7e0600283fb89df10768f104a9c3f690"
+    },
+    {
+      "path": "android/app/src/debug/AndroidManifest.xml",
+      "sha256": "fb1795032c764d975376e1612ab7022058eca2268a45efbe731a47a5d3ac0f60",
+      "kind": "copied",
+      "source": "mobile-notes/android/app/src/debug/AndroidManifest.xml",
+      "source_sha256": "fb1795032c764d975376e1612ab7022058eca2268a45efbe731a47a5d3ac0f60"
+    },
+    {
+      "path": "android/app/src/debug/java/pro/lurg/notes/SmokeBlockingWorker.kt",
+      "sha256": "95d81316f9e673f56f10d1d78fa49d56ecadc01117dd5fa53416550ad3214b41",
+      "kind": "copied",
+      "source": "mobile-notes/android/app/src/debug/java/pro/lurg/notes/SmokeBlockingWorker.kt",
+      "source_sha256": "95d81316f9e673f56f10d1d78fa49d56ecadc01117dd5fa53416550ad3214b41"
+    },
+    {
+      "path": "android/app/src/main/AndroidManifest.xml",
+      "sha256": "8081db6519440fc63967f5f56027104a4b3f450f27f49d4559a5a54cd5bae007",
+      "kind": "copied",
+      "source": "mobile-notes/android/app/src/main/AndroidManifest.xml",
+      "source_sha256": "8081db6519440fc63967f5f56027104a4b3f450f27f49d4559a5a54cd5bae007"
+    },
+    {
+      "path": "android/app/src/main/java/pro/lurg/mobile/LurgNotesApplication.kt",
+      "sha256": "a6fafa0c79f203bb903a3ed7ab99c8197e0b19e41fc728d6d379cdff5a738d9a",
+      "kind": "copied",
+      "source": "mobile-notes/android/app/src/main/java/pro/lurg/mobile/LurgNotesApplication.kt",
+      "source_sha256": "a6fafa0c79f203bb903a3ed7ab99c8197e0b19e41fc728d6d379cdff5a738d9a"
+    },
+    {
+      "path": "android/app/src/main/java/pro/lurg/mobile/MainActivity.kt",
+      "sha256": "3cddbc671403cb3618e2fb6778d71000550f12725a6c535586ae584cccf342cb",
+      "kind": "copied",
+      "source": "mobile-notes/android/app/src/main/java/pro/lurg/mobile/MainActivity.kt",
+      "source_sha256": "3cddbc671403cb3618e2fb6778d71000550f12725a6c535586ae584cccf342cb"
+    },
+    {
+      "path": "android/app/src/main/java/pro/lurg/mobile/NotesSettingsScreen.kt",
+      "sha256": "f32f94956addc6d3f31ae29fdbb47bc0a183d29f98f7ca211e9183298145f3cd",
+      "kind": "copied",
+      "source": "mobile-notes/android/app/src/main/java/pro/lurg/mobile/NotesSettingsScreen.kt",
+      "source_sha256": "f32f94956addc6d3f31ae29fdbb47bc0a183d29f98f7ca211e9183298145f3cd"
+    },
+    {
+      "path": "android/app/src/main/java/pro/lurg/mobile/UserGraphScreen.kt",
+      "sha256": "f0bea78c76393dcdfd2632f89b6bf6545e0c2e704e05b08f7c2cfee794a470cc",
+      "kind": "copied",
+      "source": "mobile-notes/android/app/src/main/java/pro/lurg/mobile/UserGraphScreen.kt",
+      "source_sha256": "f0bea78c76393dcdfd2632f89b6bf6545e0c2e704e05b08f7c2cfee794a470cc"
+    },
+    {
+      "path": "android/app/src/main/java/pro/lurg/mobile/api/AuthClient.kt",
+      "sha256": "741bfc4413cee0abd60abdf7911380b28934c1016126def38caee4357fa37786",
+      "kind": "copied",
+      "source": "mobile-notes/android/app/src/main/java/pro/lurg/mobile/api/AuthClient.kt",
+      "source_sha256": "741bfc4413cee0abd60abdf7911380b28934c1016126def38caee4357fa37786"
+    },
+    {
+      "path": "android/app/src/main/java/pro/lurg/mobile/api/E2eeDeviceClient.kt",
+      "sha256": "7006574afd8245dac347cf9d04cf4a7de2b6a2c803e6be1298268392befb1ac8",
+      "kind": "copied",
+      "source": "mobile-notes/android/app/src/main/java/pro/lurg/mobile/api/E2eeDeviceClient.kt",
+      "source_sha256": "7006574afd8245dac347cf9d04cf4a7de2b6a2c803e6be1298268392befb1ac8"
+    },
+    {
+      "path": "android/app/src/main/java/pro/lurg/mobile/api/EncryptedNotesSyncClient.kt",
+      "sha256": "f1e7bfa75ec8c33604148c63b201e96bc3d098d3478d476e18b946fc32ce3027",
+      "kind": "copied",
+      "source": "mobile-notes/android/app/src/main/java/pro/lurg/mobile/api/EncryptedNotesSyncClient.kt",
+      "source_sha256": "f1e7bfa75ec8c33604148c63b201e96bc3d098d3478d476e18b946fc32ce3027"
+    },
+    {
+      "path": "android/app/src/main/java/pro/lurg/mobile/api/NotesAiClient.kt",
+      "sha256": "8d77fdf0d6174db010b82bdc2b549e4ef42e78fd8a41f03d57509ff056b252a7",
+      "kind": "copied",
+      "source": "mobile-notes/android/app/src/main/java/pro/lurg/mobile/api/NotesAiClient.kt",
+      "source_sha256": "8d77fdf0d6174db010b82bdc2b549e4ef42e78fd8a41f03d57509ff056b252a7"
+    },
+    {
+      "path": "android/app/src/main/java/pro/lurg/mobile/api/NotesGraphClient.kt",
+      "sha256": "18d8e10591521dff3bcc02ef7e94cd82ef9c7c11094618d9f7ed0e8cd69ecb31",
+      "kind": "copied",
+      "source": "mobile-notes/android/app/src/main/java/pro/lurg/mobile/api/NotesGraphClient.kt",
+      "source_sha256": "18d8e10591521dff3bcc02ef7e94cd82ef9c7c11094618d9f7ed0e8cd69ecb31"
+    },
+    {
+      "path": "android/app/src/main/java/pro/lurg/mobile/api/NotesUpdateClient.kt",
+      "sha256": "61a902d63c19e8b17a7949c21ba5b485610970575acfc4e11904cda116e3a04c",
+      "kind": "copied",
+      "source": "mobile-notes/android/app/src/main/java/pro/lurg/mobile/api/NotesUpdateClient.kt",
+      "source_sha256": "61a902d63c19e8b17a7949c21ba5b485610970575acfc4e11904cda116e3a04c"
+    },
+    {
+      "path": "android/app/src/main/java/pro/lurg/mobile/api/PushRegistrationClient.kt",
+      "sha256": "05bfeb2f4425055ad1eb5c6f5b46560ef8e55efd5434fe9297c077a44caee70b",
+      "kind": "copied",
+      "source": "mobile-notes/android/app/src/main/java/pro/lurg/mobile/api/PushRegistrationClient.kt",
+      "source_sha256": "05bfeb2f4425055ad1eb5c6f5b46560ef8e55efd5434fe9297c077a44caee70b"
+    },
+    {
+      "path": "android/app/src/main/java/pro/lurg/mobile/api/UserGraphClient.kt",
+      "sha256": "ef0b8f2e5de13277c78f03e55303280b47ef7a47f4095e7ead5dbfc20237ca00",
+      "kind": "copied",
+      "source": "mobile-notes/android/app/src/main/java/pro/lurg/mobile/api/UserGraphClient.kt",
+      "source_sha256": "ef0b8f2e5de13277c78f03e55303280b47ef7a47f4095e7ead5dbfc20237ca00"
+    },
+    {
+      "path": "android/app/src/main/java/pro/lurg/mobile/data/LegacyNotesImporter.kt",
+      "sha256": "50c0b93ecc602184c3026e97f0aa5f4ba93ebacc215c01e161cf0ef676c2a012",
+      "kind": "copied",
+      "source": "mobile-notes/android/app/src/main/java/pro/lurg/mobile/data/LegacyNotesImporter.kt",
+      "source_sha256": "50c0b93ecc602184c3026e97f0aa5f4ba93ebacc215c01e161cf0ef676c2a012"
+    },
+    {
+      "path": "android/app/src/main/java/pro/lurg/mobile/data/LurgNotesDatabase.kt",
+      "sha256": "6cda828295a07d797385c06cc86ba7bbb34e8763fa96b5214c6cd788155ee48f",
+      "kind": "copied",
+      "source": "mobile-notes/android/app/src/main/java/pro/lurg/mobile/data/LurgNotesDatabase.kt",
+      "source_sha256": "6cda828295a07d797385c06cc86ba7bbb34e8763fa96b5214c6cd788155ee48f"
+    },
+    {
+      "path": "android/app/src/main/java/pro/lurg/mobile/data/NotesDao.kt",
+      "sha256": "4e66fd234c75032d1c47284d1bf33114f65316a3391f110dcb421d27b51a9498",
+      "kind": "copied",
+      "source": "mobile-notes/android/app/src/main/java/pro/lurg/mobile/data/NotesDao.kt",
+      "source_sha256": "4e66fd234c75032d1c47284d1bf33114f65316a3391f110dcb421d27b51a9498"
+    },
+    {
+      "path": "android/app/src/main/java/pro/lurg/mobile/data/NotesEntities.kt",
+      "sha256": "2a8a6399674813f50a6ab63628c5baf8159e056f1c68db0462c7fdf7742c8c3b",
+      "kind": "copied",
+      "source": "mobile-notes/android/app/src/main/java/pro/lurg/mobile/data/NotesEntities.kt",
+      "source_sha256": "2a8a6399674813f50a6ab63628c5baf8159e056f1c68db0462c7fdf7742c8c3b"
+    },
+    {
+      "path": "android/app/src/main/java/pro/lurg/mobile/data/NotesRepository.kt",
+      "sha256": "02b3c80b505212c7075f370f2e61af8600d643766fd63b9f692b387702837497",
+      "kind": "copied",
+      "source": "mobile-notes/android/app/src/main/java/pro/lurg/mobile/data/NotesRepository.kt",
+      "source_sha256": "02b3c80b505212c7075f370f2e61af8600d643766fd63b9f692b387702837497"
+    },
+    {
+      "path": "android/app/src/main/java/pro/lurg/mobile/editor/InlineMarkdown.kt",
+      "sha256": "4841983928a9f5cf37cbe66fb029e45fc17c087e6b8c6c1a2110f66c6f2db65b",
+      "kind": "copied",
+      "source": "mobile-notes/android/app/src/main/java/pro/lurg/mobile/editor/InlineMarkdown.kt",
+      "source_sha256": "4841983928a9f5cf37cbe66fb029e45fc17c087e6b8c6c1a2110f66c6f2db65b"
+    },
+    {
+      "path": "android/app/src/main/java/pro/lurg/mobile/editor/LurgMarkdownEditText.kt",
+      "sha256": "e0e8914e8663cca232a48e003179b51fc7ce3427288806b0275374a957649a08",
+      "kind": "copied",
+      "source": "mobile-notes/android/app/src/main/java/pro/lurg/mobile/editor/LurgMarkdownEditText.kt",
+      "source_sha256": "e0e8914e8663cca232a48e003179b51fc7ce3427288806b0275374a957649a08"
+    },
+    {
+      "path": "android/app/src/main/java/pro/lurg/mobile/editor/MarkdownRendering.kt",
+      "sha256": "00667ab5a9dd8676ed558be10ec8f630873cd3228607a75752d5315706132fcc",
+      "kind": "copied",
+      "source": "mobile-notes/android/app/src/main/java/pro/lurg/mobile/editor/MarkdownRendering.kt",
+      "source_sha256": "00667ab5a9dd8676ed558be10ec8f630873cd3228607a75752d5315706132fcc"
+    },
+    {
+      "path": "android/app/src/main/java/pro/lurg/mobile/editor/MarkdownTables.kt",
+      "sha256": "c82acecf128fcc0f3979f697525c4b4bf20a9597039970c5c155da4b54c770dc",
+      "kind": "copied",
+      "source": "mobile-notes/android/app/src/main/java/pro/lurg/mobile/editor/MarkdownTables.kt",
+      "source_sha256": "c82acecf128fcc0f3979f697525c4b4bf20a9597039970c5c155da4b54c770dc"
+    },
+    {
+      "path": "android/app/src/main/java/pro/lurg/mobile/editor/MarkdownTransforms.kt",
+      "sha256": "7174f06418015e1c93f6b558a7caf747a7c49f869e4a42fafddc193245842fcc",
+      "kind": "copied",
+      "source": "mobile-notes/android/app/src/main/java/pro/lurg/mobile/editor/MarkdownTransforms.kt",
+      "source_sha256": "7174f06418015e1c93f6b558a7caf747a7c49f869e4a42fafddc193245842fcc"
+    },
+    {
+      "path": "android/app/src/main/java/pro/lurg/mobile/lcp/NotesLcpProtocol.kt",
+      "sha256": "314f04d33300c6a79d04307dc4d0e3ef8ef6844da0c785693600bb78b96101e7",
+      "kind": "copied",
+      "source": "mobile-notes/android/app/src/main/java/pro/lurg/mobile/lcp/NotesLcpProtocol.kt",
+      "source_sha256": "314f04d33300c6a79d04307dc4d0e3ef8ef6844da0c785693600bb78b96101e7"
+    },
+    {
+      "path": "android/app/src/main/java/pro/lurg/mobile/lcp/NotesRealtimeSync.kt",
+      "sha256": "cdfc8013e3f5cb5ae77a43532a78f72dafe2007b378c7761ddbf69d7b4d5bc8b",
+      "kind": "copied",
+      "source": "mobile-notes/android/app/src/main/java/pro/lurg/mobile/lcp/NotesRealtimeSync.kt",
+      "source_sha256": "cdfc8013e3f5cb5ae77a43532a78f72dafe2007b378c7761ddbf69d7b4d5bc8b"
+    },
+    {
+      "path": "android/app/src/main/java/pro/lurg/mobile/push/LurgNotesMessagingService.kt",
+      "sha256": "1d96553a404738c54cc59c279e0c44768727858b20270ec2bcdc54efb29c1e75",
+      "kind": "copied",
+      "source": "mobile-notes/android/app/src/main/java/pro/lurg/mobile/push/LurgNotesMessagingService.kt",
+      "source_sha256": "1d96553a404738c54cc59c279e0c44768727858b20270ec2bcdc54efb29c1e75"
+    },
+    {
+      "path": "android/app/src/main/java/pro/lurg/mobile/security/E2eeV2Crypto.kt",
+      "sha256": "8f42c6abd4e8f9343f634075c41d5b60cec29514f9ec1b3d99ea98997f397854",
+      "kind": "copied",
+      "source": "mobile-notes/android/app/src/main/java/pro/lurg/mobile/security/E2eeV2Crypto.kt",
+      "source_sha256": "8f42c6abd4e8f9343f634075c41d5b60cec29514f9ec1b3d99ea98997f397854"
+    },
+    {
+      "path": "android/app/src/main/java/pro/lurg/mobile/security/NotesCrypto.kt",
+      "sha256": "6510c044f3d919169e167ffd6f2f3d0725c5e0d22c5a2c13c8c0b0c3f5046158",
+      "kind": "copied",
+      "source": "mobile-notes/android/app/src/main/java/pro/lurg/mobile/security/NotesCrypto.kt",
+      "source_sha256": "6510c044f3d919169e167ffd6f2f3d0725c5e0d22c5a2c13c8c0b0c3f5046158"
+    },
+    {
+      "path": "android/app/src/main/java/pro/lurg/mobile/security/SecureTokenStore.kt",
+      "sha256": "7927b937d45c44f1cde893e4a866c4751d4590759ea164214f4eb0ae11dcaba4",
+      "kind": "copied",
+      "source": "mobile-notes/android/app/src/main/java/pro/lurg/mobile/security/SecureTokenStore.kt",
+      "source_sha256": "7927b937d45c44f1cde893e4a866c4751d4590759ea164214f4eb0ae11dcaba4"
+    },
+    {
+      "path": "android/app/src/main/java/pro/lurg/mobile/sync/ForegroundNotesSync.kt",
+      "sha256": "72e72a166625ed393e7f1f6bef634229170ba9a2b731b4ee94ca9a3d7eccc3a1",
+      "kind": "copied",
+      "source": "mobile-notes/android/app/src/main/java/pro/lurg/mobile/sync/ForegroundNotesSync.kt",
+      "source_sha256": "72e72a166625ed393e7f1f6bef634229170ba9a2b731b4ee94ca9a3d7eccc3a1"
+    },
+    {
+      "path": "android/app/src/main/java/pro/lurg/mobile/sync/NotesSyncWorker.kt",
+      "sha256": "38ebf82ead3c1df8b12223cdc285b007aeab6aa3853281151106384cd271f0c3",
+      "kind": "copied",
+      "source": "mobile-notes/android/app/src/main/java/pro/lurg/mobile/sync/NotesSyncWorker.kt",
+      "source_sha256": "38ebf82ead3c1df8b12223cdc285b007aeab6aa3853281151106384cd271f0c3"
+    },
+    {
+      "path": "android/app/src/main/java/pro/lurg/mobile/update/NativeApkInstaller.kt",
+      "sha256": "4a9d24976142c47bb8bf1770c06d8d3a7a28cea60f2fa2a22d307f86bfb62da0",
+      "kind": "copied",
+      "source": "mobile-notes/android/app/src/main/java/pro/lurg/mobile/update/NativeApkInstaller.kt",
+      "source_sha256": "4a9d24976142c47bb8bf1770c06d8d3a7a28cea60f2fa2a22d307f86bfb62da0"
+    },
+    {
+      "path": "android/app/src/main/java/pro/lurg/mobile/update/NativeApkUpdater.kt",
+      "sha256": "99f65073ca8a6d95ba90604ba721d7c7d4f115db78242a6c870b986c7a025a6c",
+      "kind": "copied",
+      "source": "mobile-notes/android/app/src/main/java/pro/lurg/mobile/update/NativeApkUpdater.kt",
+      "source_sha256": "99f65073ca8a6d95ba90604ba721d7c7d4f115db78242a6c870b986c7a025a6c"
+    },
+    {
+      "path": "android/app/src/main/java/pro/lurg/mobile/update/NativeUpdatePolicy.kt",
+      "sha256": "b2296d7d00c996f9d55cd7e87499a863607a77d2f8a2b0d58f6b72dcf473a42e",
+      "kind": "copied",
+      "source": "mobile-notes/android/app/src/main/java/pro/lurg/mobile/update/NativeUpdatePolicy.kt",
+      "source_sha256": "b2296d7d00c996f9d55cd7e87499a863607a77d2f8a2b0d58f6b72dcf473a42e"
+    },
+    {
+      "path": "android/app/src/main/java/pro/lurg/mobile/update/NativeUpdateWorker.kt",
+      "sha256": "f1710886da7c29cb94589c0e5b0c1a55f3037d950d055887592abdc70961107c",
+      "kind": "copied",
+      "source": "mobile-notes/android/app/src/main/java/pro/lurg/mobile/update/NativeUpdateWorker.kt",
+      "source_sha256": "f1710886da7c29cb94589c0e5b0c1a55f3037d950d055887592abdc70961107c"
+    },
+    {
+      "path": "android/app/src/main/res/drawable/rn_edit_text_material.xml",
+      "sha256": "738e3aaad53180caba1419a6d5db8465a0742662fe59a4bbaf05f1061cbc3390",
+      "kind": "copied",
+      "source": "mobile-notes/android/app/src/main/res/drawable/rn_edit_text_material.xml",
+      "source_sha256": "738e3aaad53180caba1419a6d5db8465a0742662fe59a4bbaf05f1061cbc3390"
+    },
+    {
+      "path": "android/app/src/main/res/drawable/splashscreen.xml",
+      "sha256": "a97599c6963a18d40a36a725e87ce56657f7dc6d116d6c1de125e765c9d48cfd",
+      "kind": "copied",
+      "source": "mobile-notes/android/app/src/main/res/drawable/splashscreen.xml",
+      "source_sha256": "a97599c6963a18d40a36a725e87ce56657f7dc6d116d6c1de125e765c9d48cfd"
+    },
+    {
+      "path": "android/app/src/main/res/mipmap-hdpi/ic_launcher.png",
+      "sha256": "7a4ad743783b103f32a0b04c81e5c6b7f11e941725066a571c24b4780b3602d0",
+      "kind": "copied",
+      "source": "mobile-notes/android/app/src/main/res/mipmap-hdpi/ic_launcher.png",
+      "source_sha256": "7a4ad743783b103f32a0b04c81e5c6b7f11e941725066a571c24b4780b3602d0"
+    },
+    {
+      "path": "android/app/src/main/res/mipmap-hdpi/ic_launcher_round.png",
+      "sha256": "7a4ad743783b103f32a0b04c81e5c6b7f11e941725066a571c24b4780b3602d0",
+      "kind": "copied",
+      "source": "mobile-notes/android/app/src/main/res/mipmap-hdpi/ic_launcher_round.png",
+      "source_sha256": "7a4ad743783b103f32a0b04c81e5c6b7f11e941725066a571c24b4780b3602d0"
+    },
+    {
+      "path": "android/app/src/main/res/mipmap-mdpi/ic_launcher.png",
+      "sha256": "c438cbdfc1c7e7a6978eb200c845b8c1ba0ed54cda3fdd0491e40794c60ee0e9",
+      "kind": "copied",
+      "source": "mobile-notes/android/app/src/main/res/mipmap-mdpi/ic_launcher.png",
+      "source_sha256": "c438cbdfc1c7e7a6978eb200c845b8c1ba0ed54cda3fdd0491e40794c60ee0e9"
+    },
+    {
+      "path": "android/app/src/main/res/mipmap-mdpi/ic_launcher_round.png",
+      "sha256": "c438cbdfc1c7e7a6978eb200c845b8c1ba0ed54cda3fdd0491e40794c60ee0e9",
+      "kind": "copied",
+      "source": "mobile-notes/android/app/src/main/res/mipmap-mdpi/ic_launcher_round.png",
+      "source_sha256": "c438cbdfc1c7e7a6978eb200c845b8c1ba0ed54cda3fdd0491e40794c60ee0e9"
+    },
+    {
+      "path": "android/app/src/main/res/mipmap-xhdpi/ic_launcher.png",
+      "sha256": "ac78335d973bd594648bed88d106b9afadf87b37d71cea1f18809b1d2514c1c0",
+      "kind": "copied",
+      "source": "mobile-notes/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png",
+      "source_sha256": "ac78335d973bd594648bed88d106b9afadf87b37d71cea1f18809b1d2514c1c0"
+    },
+    {
+      "path": "android/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png",
+      "sha256": "ac78335d973bd594648bed88d106b9afadf87b37d71cea1f18809b1d2514c1c0",
+      "kind": "copied",
+      "source": "mobile-notes/android/app/src/main/res/mipmap-xhdpi/ic_launcher_round.png",
+      "source_sha256": "ac78335d973bd594648bed88d106b9afadf87b37d71cea1f18809b1d2514c1c0"
+    },
+    {
+      "path": "android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png",
+      "sha256": "0a9c4b76e25bbe818a039eb9183e31bf05fad2cbb86a611325620b5a60fe29b5",
+      "kind": "copied",
+      "source": "mobile-notes/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png",
+      "source_sha256": "0a9c4b76e25bbe818a039eb9183e31bf05fad2cbb86a611325620b5a60fe29b5"
+    },
+    {
+      "path": "android/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png",
+      "sha256": "0a9c4b76e25bbe818a039eb9183e31bf05fad2cbb86a611325620b5a60fe29b5",
+      "kind": "copied",
+      "source": "mobile-notes/android/app/src/main/res/mipmap-xxhdpi/ic_launcher_round.png",
+      "source_sha256": "0a9c4b76e25bbe818a039eb9183e31bf05fad2cbb86a611325620b5a60fe29b5"
+    },
+    {
+      "path": "android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png",
+      "sha256": "0b1f7547b17c603dc7bad04ea0be0f9e6bc042482662d58d6d9a73f5d32a65b3",
+      "kind": "copied",
+      "source": "mobile-notes/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png",
+      "source_sha256": "0b1f7547b17c603dc7bad04ea0be0f9e6bc042482662d58d6d9a73f5d32a65b3"
+    },
+    {
+      "path": "android/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png",
+      "sha256": "0b1f7547b17c603dc7bad04ea0be0f9e6bc042482662d58d6d9a73f5d32a65b3",
+      "kind": "copied",
+      "source": "mobile-notes/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher_round.png",
+      "source_sha256": "0b1f7547b17c603dc7bad04ea0be0f9e6bc042482662d58d6d9a73f5d32a65b3"
+    },
+    {
+      "path": "android/app/src/main/res/values/colors.xml",
+      "sha256": "0022f8d294969a53ae664ef3429c740686b830995a34213284b5869e11a2bc7f",
+      "kind": "copied",
+      "source": "mobile-notes/android/app/src/main/res/values/colors.xml",
+      "source_sha256": "0022f8d294969a53ae664ef3429c740686b830995a34213284b5869e11a2bc7f"
+    },
+    {
+      "path": "android/app/src/main/res/values/strings.xml",
+      "sha256": "ca3d977395b7bb20f1c3b12ee2768d673127c51fb27fff550f9fcf3620172800",
+      "kind": "copied",
+      "source": "mobile-notes/android/app/src/main/res/values/strings.xml",
+      "source_sha256": "ca3d977395b7bb20f1c3b12ee2768d673127c51fb27fff550f9fcf3620172800"
+    },
+    {
+      "path": "android/app/src/main/res/values/styles.xml",
+      "sha256": "7ad3644732954f4117162fb40297472a56f4cf70027532b0a4a4a997b2b969d2",
+      "kind": "copied",
+      "source": "mobile-notes/android/app/src/main/res/values/styles.xml",
+      "source_sha256": "7ad3644732954f4117162fb40297472a56f4cf70027532b0a4a4a997b2b969d2"
+    },
+    {
+      "path": "android/app/src/main/res/values-night/colors.xml",
+      "sha256": "c30a9f37e6b34372e1db8c812d64a18719acf7c52c11ff2f7e5e5ed5e05c2072",
+      "kind": "copied",
+      "source": "mobile-notes/android/app/src/main/res/values-night/colors.xml",
+      "source_sha256": "c30a9f37e6b34372e1db8c812d64a18719acf7c52c11ff2f7e5e5ed5e05c2072"
+    },
+    {
+      "path": "android/app/src/main/res/xml/notes_file_paths.xml",
+      "sha256": "d3e418a4799d69b5b18f3b516918534393d0f040def817f84ca8215c885702a5",
+      "kind": "copied",
+      "source": "mobile-notes/android/app/src/main/res/xml/notes_file_paths.xml",
+      "source_sha256": "d3e418a4799d69b5b18f3b516918534393d0f040def817f84ca8215c885702a5"
+    },
+    {
+      "path": "android/app/src/test/java/pro/lurg/notes/data/DocumentBlockProjectionTest.kt",
+      "sha256": "bca793b8569554f60e225e4047b63983ea01b06bb64ce2c3f95912cfb91f6f5b",
+      "kind": "copied",
+      "source": "mobile-notes/android/app/src/test/java/pro/lurg/notes/data/DocumentBlockProjectionTest.kt",
+      "source_sha256": "bca793b8569554f60e225e4047b63983ea01b06bb64ce2c3f95912cfb91f6f5b"
+    },
+    {
+      "path": "android/app/src/test/java/pro/lurg/notes/editor/InlineMarkdownTest.kt",
+      "sha256": "a4e1a0ef71b59da15e1183f80294416cb65c59f9c13a18fb4750e2db9a6fbf1a",
+      "kind": "copied",
+      "source": "mobile-notes/android/app/src/test/java/pro/lurg/notes/editor/InlineMarkdownTest.kt",
+      "source_sha256": "a4e1a0ef71b59da15e1183f80294416cb65c59f9c13a18fb4750e2db9a6fbf1a"
+    },
+    {
+      "path": "android/app/src/test/java/pro/lurg/notes/editor/MarkdownTablesTest.kt",
+      "sha256": "04ae8a11644793402da05590f58e50a21915580c788d183873820c05bdd2faac",
+      "kind": "copied",
+      "source": "mobile-notes/android/app/src/test/java/pro/lurg/notes/editor/MarkdownTablesTest.kt",
+      "source_sha256": "04ae8a11644793402da05590f58e50a21915580c788d183873820c05bdd2faac"
+    },
+    {
+      "path": "android/app/src/test/java/pro/lurg/notes/editor/MarkdownTransformsTest.kt",
+      "sha256": "d7a2d81848ddaf1f009a872e78cb660da0c373fb0942b490ed18e63af7351704",
+      "kind": "copied",
+      "source": "mobile-notes/android/app/src/test/java/pro/lurg/notes/editor/MarkdownTransformsTest.kt",
+      "source_sha256": "d7a2d81848ddaf1f009a872e78cb660da0c373fb0942b490ed18e63af7351704"
+    },
+    {
+      "path": "android/app/src/test/java/pro/lurg/notes/editor/NotesEditorStateTest.kt",
+      "sha256": "4e661a94a026b0ed191719612182b5652fdb73536407356ccfe7ff2fe0ab946e",
+      "kind": "copied",
+      "source": "mobile-notes/android/app/src/test/java/pro/lurg/notes/editor/NotesEditorStateTest.kt",
+      "source_sha256": "4e661a94a026b0ed191719612182b5652fdb73536407356ccfe7ff2fe0ab946e"
+    },
+    {
+      "path": "android/app/src/test/java/pro/lurg/notes/security/E2eeCryptoPrimitivesTest.kt",
+      "sha256": "4c1e521e6b6ea92f0736eee69ff58317cb92dadb5965963264f0dc0fa019103a",
+      "kind": "copied",
+      "source": "mobile-notes/android/app/src/test/java/pro/lurg/notes/security/E2eeCryptoPrimitivesTest.kt",
+      "source_sha256": "4c1e521e6b6ea92f0736eee69ff58317cb92dadb5965963264f0dc0fa019103a"
+    },
+    {
+      "path": "android/app/src/test/java/pro/lurg/notes/sync/ForegroundNotesSyncTest.kt",
+      "sha256": "d03cbf154e5f8660a4f82a98c13b548fbd3fb14cbcdf4a7dc70f3a52c04e5fdd",
+      "kind": "copied",
+      "source": "mobile-notes/android/app/src/test/java/pro/lurg/notes/sync/ForegroundNotesSyncTest.kt",
+      "source_sha256": "d03cbf154e5f8660a4f82a98c13b548fbd3fb14cbcdf4a7dc70f3a52c04e5fdd"
+    },
+    {
+      "path": "android/app/src/test/java/pro/lurg/notes/sync/NotesRealtimeSyncTest.kt",
+      "sha256": "ede03c9ef62fbedafbc168091f907210fdd9be9af615bc10b7687d1d9bbab114",
+      "kind": "copied",
+      "source": "mobile-notes/android/app/src/test/java/pro/lurg/notes/sync/NotesRealtimeSyncTest.kt",
+      "source_sha256": "ede03c9ef62fbedafbc168091f907210fdd9be9af615bc10b7687d1d9bbab114"
+    },
+    {
+      "path": "android/app/src/test/java/pro/lurg/notes/update/NativeApkIntegrityTest.kt",
+      "sha256": "99c87fe9f40f84590b967b1ff1e2b5cf310e967ce892f7efe2adafb5a88d6e82",
+      "kind": "copied",
+      "source": "mobile-notes/android/app/src/test/java/pro/lurg/notes/update/NativeApkIntegrityTest.kt",
+      "source_sha256": "99c87fe9f40f84590b967b1ff1e2b5cf310e967ce892f7efe2adafb5a88d6e82"
+    },
+    {
+      "path": "android/app/src/test/java/pro/lurg/notes/update/NativeUpdatePolicyTest.kt",
+      "sha256": "a6ebbe4b1a1d9a008aaaa3c15f2265bd90c2b60399a6a9fd1d8d82b6c7985e6c",
+      "kind": "copied",
+      "source": "mobile-notes/android/app/src/test/java/pro/lurg/notes/update/NativeUpdatePolicyTest.kt",
+      "source_sha256": "a6ebbe4b1a1d9a008aaaa3c15f2265bd90c2b60399a6a9fd1d8d82b6c7985e6c"
+    },
+    {
+      "path": "android/build.gradle",
+      "sha256": "db2fcd2b99ee29f5671a23b42c34f2e1b5fd0b78be56c63ce31968bca618555e",
+      "kind": "copied",
+      "source": "mobile-notes/android/build.gradle",
+      "source_sha256": "db2fcd2b99ee29f5671a23b42c34f2e1b5fd0b78be56c63ce31968bca618555e"
+    },
+    {
+      "path": "android/gradle/wrapper/gradle-wrapper.jar",
+      "sha256": "cb0da6751c2b753a16ac168bb354870ebb1e162e9083f116729cec9c781156b8",
+      "kind": "copied",
+      "source": "mobile-notes/android/gradle/wrapper/gradle-wrapper.jar",
+      "source_sha256": "cb0da6751c2b753a16ac168bb354870ebb1e162e9083f116729cec9c781156b8"
+    },
+    {
+      "path": "android/gradle/wrapper/gradle-wrapper.properties",
+      "sha256": "d5175eaa933ae7aebb126f5c99024f511a396132e8bacdfe74c66daf8292920d",
+      "kind": "copied",
+      "source": "mobile-notes/android/gradle/wrapper/gradle-wrapper.properties",
+      "source_sha256": "d5175eaa933ae7aebb126f5c99024f511a396132e8bacdfe74c66daf8292920d"
+    },
+    {
+      "path": "android/gradle.properties",
+      "sha256": "191cda5e83fc75a6246042a4ea233e7db212e1a1a105ffa32c92b56cdad0e4a1",
+      "kind": "copied",
+      "source": "mobile-notes/android/gradle.properties",
+      "source_sha256": "191cda5e83fc75a6246042a4ea233e7db212e1a1a105ffa32c92b56cdad0e4a1"
+    },
+    {
+      "path": "android/gradlew",
+      "sha256": "fc977a94723af68aaffa4e5d60496fb4aeed1884b6b19e5e2f2fd7612673313d",
+      "kind": "copied",
+      "source": "mobile-notes/android/gradlew",
+      "source_sha256": "fc977a94723af68aaffa4e5d60496fb4aeed1884b6b19e5e2f2fd7612673313d"
+    },
+    {
+      "path": "android/gradlew.bat",
+      "sha256": "bdecf875b6868cbcbd36a1f85eedf0832f358ff28092c5797ed645f7edce77d9",
+      "kind": "copied",
+      "source": "mobile-notes/android/gradlew.bat",
+      "source_sha256": "bdecf875b6868cbcbd36a1f85eedf0832f358ff28092c5797ed645f7edce77d9"
+    },
+    {
+      "path": "android/settings.gradle",
+      "sha256": "227003296210f97bd5da3152f818a66784850c49a4497fd275e0b16f4290ab9e",
+      "kind": "copied",
+      "source": "mobile-notes/android/settings.gradle",
+      "source_sha256": "227003296210f97bd5da3152f818a66784850c49a4497fd275e0b16f4290ab9e"
+    },
+    {
+      "path": "compose.yml",
+      "sha256": "3095dd084b21bae7ac3a6b7fc8758805a242023f0553547d51df74dde747aee5",
+      "kind": "generated"
+    },
+    {
+      "path": "docs/EXPORT.md",
+      "sha256": "a2ae030eb771ca6cedd58bbe513be9dfcb8e4474553741a0918ed810465c943b",
+      "kind": "generated"
+    },
+    {
+      "path": "docs/LURG_NOTES.md",
+      "sha256": "b7648a7252f620dce0382781eb0a6dae851a661f0703d07f35160e7d45b2294d",
+      "kind": "adapted",
+      "source": "docs/LURG_NOTES.md",
+      "source_sha256": "4c99de1b326cc6567c9da5fb77cd16d5d323708aefa79e3c70f89f5856fc4ae8",
+      "note": "Relative protocol link and updated foreground LCP invalidation description."
+    },
+    {
+      "path": "docs/VALIDATION.md",
+      "sha256": "6966fbdb49abf01d005ab8a3b6bcfb90a1efb21e055695d6d2ca0df95f158018",
+      "kind": "generated"
+    },
+    {
+      "path": "docs/lurg-notes-e2ee-v2.md",
+      "sha256": "f0bddcae59a80128168277a192666a7cdbabcbabe79c040295ca24b148ae1e79",
+      "kind": "copied",
+      "source": "docs/lurg-notes-e2ee-v2.md",
+      "source_sha256": "f0bddcae59a80128168277a192666a7cdbabcbabe79c040295ca24b148ae1e79"
+    },
+    {
+      "path": "lcp/.dockerignore",
+      "sha256": "d038844a56d446254a367a4b70a8b37ca8ec38688afc23ca7d207322edf11a03",
+      "kind": "copied",
+      "source": "lcp/.dockerignore",
+      "source_sha256": "d038844a56d446254a367a4b70a8b37ca8ec38688afc23ca7d207322edf11a03"
+    },
+    {
+      "path": "lcp/.env.example",
+      "sha256": "82f632778eeffcbf587b88a9a7bda52043605c3e32735ffa845843f7deac86c5",
+      "kind": "copied",
+      "source": "lcp/.env.example",
+      "source_sha256": "82f632778eeffcbf587b88a9a7bda52043605c3e32735ffa845843f7deac86c5"
+    },
+    {
+      "path": "lcp/.gitignore",
+      "sha256": "c40906c4cbe2ab0617b974522a8241f49067ff2c2405edf759d1dee45e6c517f",
+      "kind": "copied",
+      "source": "lcp/.gitignore",
+      "source_sha256": "c40906c4cbe2ab0617b974522a8241f49067ff2c2405edf759d1dee45e6c517f"
+    },
+    {
+      "path": "lcp/Dockerfile",
+      "sha256": "2485bd164f3eefba6bf2a0b1c202dd7443efac0a0044e5b4f1356891fd4fa379",
+      "kind": "copied",
+      "source": "lcp/Dockerfile",
+      "source_sha256": "2485bd164f3eefba6bf2a0b1c202dd7443efac0a0044e5b4f1356891fd4fa379"
+    },
+    {
+      "path": "lcp/README.md",
+      "sha256": "8dd9da31ae39b082722daa5a51c93c1999cfcf7db28c36b1c324a3f974c0506b",
+      "kind": "adapted",
+      "source": "lcp/README.md",
+      "source_sha256": "036043a075c866c6fceceb9244e376103cfdb8efa3b2964c76d8ea686d2c4055",
+      "note": "Standalone Notes gateway setup and scope documentation."
+    },
+    {
+      "path": "lcp/app/__init__.py",
+      "sha256": "6c6bcbc490c3a6ec78e42dbfac742b617636f9a7a51e1887c7ce9c480b701b2a",
+      "kind": "copied",
+      "source": "lcp/app/__init__.py",
+      "source_sha256": "6c6bcbc490c3a6ec78e42dbfac742b617636f9a7a51e1887c7ce9c480b701b2a"
+    },
+    {
+      "path": "lcp/app/config.py",
+      "sha256": "f8c1205d8aa5152787179c58e1d3a5d85adcc2d1504ae55bafec85d44e1783b6",
+      "kind": "copied",
+      "source": "lcp/app/config.py",
+      "source_sha256": "f8c1205d8aa5152787179c58e1d3a5d85adcc2d1504ae55bafec85d44e1783b6"
+    },
+    {
+      "path": "lcp/app/connection/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "kind": "copied",
+      "source": "lcp/app/connection/__init__.py",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "lcp/app/connection/context.py",
+      "sha256": "cda51032293b300793fbf3a40d3cbf877726eccc027e4df1df70dd2ddca0de96",
+      "kind": "copied",
+      "source": "lcp/app/connection/context.py",
+      "source_sha256": "cda51032293b300793fbf3a40d3cbf877726eccc027e4df1df70dd2ddca0de96"
+    },
+    {
+      "path": "lcp/app/connection/handshake.py",
+      "sha256": "3772ebe1907018fe961345940d78e99e273ad5ef2a8b35973b15b2dc8a3f5a69",
+      "kind": "copied",
+      "source": "lcp/app/connection/handshake.py",
+      "source_sha256": "3772ebe1907018fe961345940d78e99e273ad5ef2a8b35973b15b2dc8a3f5a69"
+    },
+    {
+      "path": "lcp/app/connection/manager.py",
+      "sha256": "7b26b72f07d38f58957dcbd8af12df6d98772484e286a8ee1a6d6b15c00760d7",
+      "kind": "copied",
+      "source": "lcp/app/connection/manager.py",
+      "source_sha256": "7b26b72f07d38f58957dcbd8af12df6d98772484e286a8ee1a6d6b15c00760d7"
+    },
+    {
+      "path": "lcp/app/dependencies.py",
+      "sha256": "f08b81aa4b8e7be8040bbb7b96af306814fd11a513a8ecdb5ee35e0a77565496",
+      "kind": "copied",
+      "source": "lcp/app/dependencies.py",
+      "source_sha256": "f08b81aa4b8e7be8040bbb7b96af306814fd11a513a8ecdb5ee35e0a77565496"
+    },
+    {
+      "path": "lcp/app/health/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "kind": "copied",
+      "source": "lcp/app/health/__init__.py",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "lcp/app/health/routes.py",
+      "sha256": "8e67d8ee6d9d88a0fa82414599e5005cd764a0da4f5be34d4c9d60ee74f86aef",
+      "kind": "copied",
+      "source": "lcp/app/health/routes.py",
+      "source_sha256": "8e67d8ee6d9d88a0fa82414599e5005cd764a0da4f5be34d4c9d60ee74f86aef"
+    },
+    {
+      "path": "lcp/app/main.py",
+      "sha256": "a6851974202cf9f68ab09f8ec3d1d013e720aca33c4135d44a8a45d1cf05786b",
+      "kind": "copied",
+      "source": "lcp/app/main.py",
+      "source_sha256": "a6851974202cf9f68ab09f8ec3d1d013e720aca33c4135d44a8a45d1cf05786b"
+    },
+    {
+      "path": "lcp/app/observability/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "kind": "copied",
+      "source": "lcp/app/observability/__init__.py",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "lcp/app/observability/logging.py",
+      "sha256": "a257666899c1f1e9a320a903287fa3d82aaf5ab231bff0030fadaf9b173f2b69",
+      "kind": "copied",
+      "source": "lcp/app/observability/logging.py",
+      "source_sha256": "a257666899c1f1e9a320a903287fa3d82aaf5ab231bff0030fadaf9b173f2b69"
+    },
+    {
+      "path": "lcp/app/observability/metrics.py",
+      "sha256": "cc2ae0e30349ca6452159873ec959cf63e99132d27bd9366f5f9a919011564b8",
+      "kind": "copied",
+      "source": "lcp/app/observability/metrics.py",
+      "source_sha256": "cc2ae0e30349ca6452159873ec959cf63e99132d27bd9366f5f9a919011564b8"
+    },
+    {
+      "path": "lcp/app/observability/tracing.py",
+      "sha256": "a9b948be1dce2dbd5aa3837e936478bcc8eadfd7fd6cd9652117f2f6663c8099",
+      "kind": "copied",
+      "source": "lcp/app/observability/tracing.py",
+      "source_sha256": "a9b948be1dce2dbd5aa3837e936478bcc8eadfd7fd6cd9652117f2f6663c8099"
+    },
+    {
+      "path": "lcp/app/protocol/__init__.py",
+      "sha256": "86b62bff4409b4b244d2ef726ccccd8fa06a41abb57bf011bab44bc99649dfdc",
+      "kind": "copied",
+      "source": "lcp/app/protocol/__init__.py",
+      "source_sha256": "86b62bff4409b4b244d2ef726ccccd8fa06a41abb57bf011bab44bc99649dfdc"
+    },
+    {
+      "path": "lcp/app/protocol/constants.py",
+      "sha256": "00c460bbf5437056c3f7a66683563a55c063f1e13254036478043adc69314f72",
+      "kind": "copied",
+      "source": "lcp/app/protocol/constants.py",
+      "source_sha256": "00c460bbf5437056c3f7a66683563a55c063f1e13254036478043adc69314f72"
+    },
+    {
+      "path": "lcp/app/protocol/dispatcher.py",
+      "sha256": "27ff97d81c6fa8e89a248dda50a6d0fb8460e5d81d5f626a5a67303015e88370",
+      "kind": "copied",
+      "source": "lcp/app/protocol/dispatcher.py",
+      "source_sha256": "27ff97d81c6fa8e89a248dda50a6d0fb8460e5d81d5f626a5a67303015e88370"
+    },
+    {
+      "path": "lcp/app/protocol/errors.py",
+      "sha256": "345c31fab56b10041d42f35831bb94e6b0f9b86ff3163c080a96429c54dbfe3e",
+      "kind": "copied",
+      "source": "lcp/app/protocol/errors.py",
+      "source_sha256": "345c31fab56b10041d42f35831bb94e6b0f9b86ff3163c080a96429c54dbfe3e"
+    },
+    {
+      "path": "lcp/app/protocol/models.py",
+      "sha256": "e5a8d176e72c8f44be1a7b2ad7945fa620c669980a053496ab923c4aade1afd8",
+      "kind": "copied",
+      "source": "lcp/app/protocol/models.py",
+      "source_sha256": "e5a8d176e72c8f44be1a7b2ad7945fa620c669980a053496ab923c4aade1afd8"
+    },
+    {
+      "path": "lcp/app/protocol/parser.py",
+      "sha256": "6bdaf26572ec33e940c88ece150b0dc0c084caa7715d65ed04286431e71aac59",
+      "kind": "copied",
+      "source": "lcp/app/protocol/parser.py",
+      "source_sha256": "6bdaf26572ec33e940c88ece150b0dc0c084caa7715d65ed04286431e71aac59"
+    },
+    {
+      "path": "lcp/app/protocol/validator.py",
+      "sha256": "bb720a302fec1f134c405fbc688afddf2e37b1cc99ca6ad8af941af7bea4f297",
+      "kind": "copied",
+      "source": "lcp/app/protocol/validator.py",
+      "source_sha256": "bb720a302fec1f134c405fbc688afddf2e37b1cc99ca6ad8af941af7bea4f297"
+    },
+    {
+      "path": "lcp/app/realtime/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "kind": "copied",
+      "source": "lcp/app/realtime/__init__.py",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "lcp/app/realtime/events.py",
+      "sha256": "811127791b04c4f2c9d89acb90d24c7bd33a8d87d0dd154514f5d77876b69f0e",
+      "kind": "copied",
+      "source": "lcp/app/realtime/events.py",
+      "source_sha256": "811127791b04c4f2c9d89acb90d24c7bd33a8d87d0dd154514f5d77876b69f0e"
+    },
+    {
+      "path": "lcp/app/realtime/manager.py",
+      "sha256": "9e85121871b1b64ec92d8b409108e522dd158288d9b720a6775710a502affd6c",
+      "kind": "copied",
+      "source": "lcp/app/realtime/manager.py",
+      "source_sha256": "9e85121871b1b64ec92d8b409108e522dd158288d9b720a6775710a502affd6c"
+    },
+    {
+      "path": "lcp/app/realtime/replay.py",
+      "sha256": "f9d20f72236950144bf5202646114ec30e6ff80d9d2b01c9462caf5af1556fc1",
+      "kind": "copied",
+      "source": "lcp/app/realtime/replay.py",
+      "source_sha256": "f9d20f72236950144bf5202646114ec30e6ff80d9d2b01c9462caf5af1556fc1"
+    },
+    {
+      "path": "lcp/app/realtime/subscriptions.py",
+      "sha256": "6b24f1c15f18ede07061f22deda516e2033a6a9aed594029e95af330763b6cb8",
+      "kind": "copied",
+      "source": "lcp/app/realtime/subscriptions.py",
+      "source_sha256": "6b24f1c15f18ede07061f22deda516e2033a6a9aed594029e95af330763b6cb8"
+    },
+    {
+      "path": "lcp/app/rpc/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "kind": "copied",
+      "source": "lcp/app/rpc/__init__.py",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "lcp/app/rpc/client.py",
+      "sha256": "37948c4b26972d51d4133c567bd3f78cae51a8a008b2494d315a27016512d62e",
+      "kind": "copied",
+      "source": "lcp/app/rpc/client.py",
+      "source_sha256": "37948c4b26972d51d4133c567bd3f78cae51a8a008b2494d315a27016512d62e"
+    },
+    {
+      "path": "lcp/app/rpc/idempotency.py",
+      "sha256": "3b9299fb882b6a43765b0629fbbfacb9c681b9927db894a09f9133b7d8624a09",
+      "kind": "copied",
+      "source": "lcp/app/rpc/idempotency.py",
+      "source_sha256": "3b9299fb882b6a43765b0629fbbfacb9c681b9927db894a09f9133b7d8624a09"
+    },
+    {
+      "path": "lcp/app/rpc/methods.py",
+      "sha256": "7a8abb78262f319326601a5f61364bee0db5cd061c049994a5783a28c74d7fa0",
+      "kind": "copied",
+      "source": "lcp/app/rpc/methods.py",
+      "source_sha256": "7a8abb78262f319326601a5f61364bee0db5cd061c049994a5783a28c74d7fa0"
+    },
+    {
+      "path": "lcp/app/rpc/router.py",
+      "sha256": "c741e0219c53e56fd07f8829ab9f5b2200e2807df40ad3aae122aea62e213db3",
+      "kind": "copied",
+      "source": "lcp/app/rpc/router.py",
+      "source_sha256": "c741e0219c53e56fd07f8829ab9f5b2200e2807df40ad3aae122aea62e213db3"
+    },
+    {
+      "path": "lcp/app/security/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "kind": "copied",
+      "source": "lcp/app/security/__init__.py",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "lcp/app/security/auth.py",
+      "sha256": "be02cbb0be502cc48059a3e1e34de801632e8b699a8add0c5cdcf66e45454190",
+      "kind": "copied",
+      "source": "lcp/app/security/auth.py",
+      "source_sha256": "be02cbb0be502cc48059a3e1e34de801632e8b699a8add0c5cdcf66e45454190"
+    },
+    {
+      "path": "lcp/app/security/permissions.py",
+      "sha256": "b4c88099b1fda84ed3450b37e5c76d6474eec5134206d06ff371afb9f99d12ee",
+      "kind": "copied",
+      "source": "lcp/app/security/permissions.py",
+      "source_sha256": "b4c88099b1fda84ed3450b37e5c76d6474eec5134206d06ff371afb9f99d12ee"
+    },
+    {
+      "path": "lcp/app/security/rate_limit.py",
+      "sha256": "41ca3219f6c5028a3053fb675e263e119bbca28120869ad21267b668d051c2dd",
+      "kind": "copied",
+      "source": "lcp/app/security/rate_limit.py",
+      "source_sha256": "41ca3219f6c5028a3053fb675e263e119bbca28120869ad21267b668d051c2dd"
+    },
+    {
+      "path": "lcp/app/session/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "kind": "copied",
+      "source": "lcp/app/session/__init__.py",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "lcp/app/session/manager.py",
+      "sha256": "82dd176370c421e8e65c5625857ce05d2813540cf1cda2d20a18bcd7e1c7d0a3",
+      "kind": "copied",
+      "source": "lcp/app/session/manager.py",
+      "source_sha256": "82dd176370c421e8e65c5625857ce05d2813540cf1cda2d20a18bcd7e1c7d0a3"
+    },
+    {
+      "path": "lcp/app/session/models.py",
+      "sha256": "dec8f6c630f230bb039edc5bca92000a23089f5fa63fd790300daa87c358df34",
+      "kind": "copied",
+      "source": "lcp/app/session/models.py",
+      "source_sha256": "dec8f6c630f230bb039edc5bca92000a23089f5fa63fd790300daa87c358df34"
+    },
+    {
+      "path": "lcp/app/session/resume.py",
+      "sha256": "10ef690a19a0dfed45b30439403fd019c44c01c0ecd02ae0fd769abe04bf492b",
+      "kind": "copied",
+      "source": "lcp/app/session/resume.py",
+      "source_sha256": "10ef690a19a0dfed45b30439403fd019c44c01c0ecd02ae0fd769abe04bf492b"
+    },
+    {
+      "path": "lcp/app/session/tokens.py",
+      "sha256": "3fd935036dd2d78c8cecc444d1ab65e1f3a0f8a61180b25e3e56ecb54aca42c1",
+      "kind": "copied",
+      "source": "lcp/app/session/tokens.py",
+      "source_sha256": "3fd935036dd2d78c8cecc444d1ab65e1f3a0f8a61180b25e3e56ecb54aca42c1"
+    },
+    {
+      "path": "lcp/app/site/index.html",
+      "sha256": "78db40d6d1be666f78138f3c9c42c602b8c7ea0f69d97836ccf132363e2decc8",
+      "kind": "copied",
+      "source": "lcp/app/site/index.html",
+      "source_sha256": "78db40d6d1be666f78138f3c9c42c602b8c7ea0f69d97836ccf132363e2decc8"
+    },
+    {
+      "path": "lcp/app/storage/__init__.py",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "kind": "copied",
+      "source": "lcp/app/storage/__init__.py",
+      "source_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "lcp/app/storage/keys.py",
+      "sha256": "ea0576adc3eaee96afb1924ec7345f4e06d98bf3b44e995737c027ee863c0b93",
+      "kind": "copied",
+      "source": "lcp/app/storage/keys.py",
+      "source_sha256": "ea0576adc3eaee96afb1924ec7345f4e06d98bf3b44e995737c027ee863c0b93"
+    },
+    {
+      "path": "lcp/app/storage/redis.py",
+      "sha256": "cff7ecf47cc0f5de244cdda4edd228fc057560f182da065988c8cc8db6b43884",
+      "kind": "copied",
+      "source": "lcp/app/storage/redis.py",
+      "source_sha256": "cff7ecf47cc0f5de244cdda4edd228fc057560f182da065988c8cc8db6b43884"
+    },
+    {
+      "path": "lcp/pyproject.toml",
+      "sha256": "63f7548b89423a8a54d5c1542492f104ca0115a3af7b5b4326652648ce3d69e9",
+      "kind": "copied",
+      "source": "lcp/pyproject.toml",
+      "source_sha256": "63f7548b89423a8a54d5c1542492f104ca0115a3af7b5b4326652648ce3d69e9"
+    },
+    {
+      "path": "lcp/tests/conftest.py",
+      "sha256": "b43d464c14a4036738eec1df9d5cfc8b080fa65c28851f0849ff3f46a30fe352",
+      "kind": "copied",
+      "source": "lcp/tests/conftest.py",
+      "source_sha256": "b43d464c14a4036738eec1df9d5cfc8b080fa65c28851f0849ff3f46a30fe352"
+    },
+    {
+      "path": "lcp/tests/fixtures/nearby_lcp_events.py",
+      "sha256": "a598c303e9d31dcf16d78d132dfbc89217248d9379c15f08cde1e2f4a2287a79",
+      "kind": "copied",
+      "source": "artifacts/implementation-2026-10-03/nearby-lcp-events.py",
+      "source_sha256": "a598c303e9d31dcf16d78d132dfbc89217248d9379c15f08cde1e2f4a2287a79"
+    },
+    {
+      "path": "lcp/tests/integration/test_lifespan.py",
+      "sha256": "f97db5ca741be5fc0a058dfa459da0ca7cab3f84d1689f21633f7c12964aabda",
+      "kind": "copied",
+      "source": "lcp/tests/integration/test_lifespan.py",
+      "source_sha256": "f97db5ca741be5fc0a058dfa459da0ca7cab3f84d1689f21633f7c12964aabda"
+    },
+    {
+      "path": "lcp/tests/integration/test_regressions.py",
+      "sha256": "4b73784b157d3f9b5c3da0773cabc70fff144c17dac524add85b1c84e5f5928e",
+      "kind": "adapted",
+      "source": "lcp/tests/integration/test_regressions.py",
+      "source_sha256": "01bf6149e3bea9c72afbce921ba884beeaef33033bc36b4d8483e050fe65e8ce",
+      "note": "Use an included relative fixture instead of a local artifact path."
+    },
+    {
+      "path": "lcp/tests/integration/test_resume_flow.py",
+      "sha256": "57e271d392c4723b562eda8eb4fcfebd23a26a790716243ab06aa5cf19e5c4dc",
+      "kind": "copied",
+      "source": "lcp/tests/integration/test_resume_flow.py",
+      "source_sha256": "57e271d392c4723b562eda8eb4fcfebd23a26a790716243ab06aa5cf19e5c4dc"
+    },
+    {
+      "path": "lcp/tests/protocol/test_parser.py",
+      "sha256": "5ea55daefae1c46737f1d42c554635873067144fcfde85fd42f31bcf70808d65",
+      "kind": "copied",
+      "source": "lcp/tests/protocol/test_parser.py",
+      "source_sha256": "5ea55daefae1c46737f1d42c554635873067144fcfde85fd42f31bcf70808d65"
+    },
+    {
+      "path": "lcp/tests/rpc/test_rpc.py",
+      "sha256": "2037af68501515c5b79fb497c6d3772cf964442b3e7c73a1c1b95de4583d188d",
+      "kind": "copied",
+      "source": "lcp/tests/rpc/test_rpc.py",
+      "source_sha256": "2037af68501515c5b79fb497c6d3772cf964442b3e7c73a1c1b95de4583d188d"
+    },
+    {
+      "path": "lcp/tests/security/test_authority.py",
+      "sha256": "59e60bb77b1239a536405d1db4e59a0423c3a58e780f8d819dc4559b2a8f6b73",
+      "kind": "copied",
+      "source": "lcp/tests/security/test_authority.py",
+      "source_sha256": "59e60bb77b1239a536405d1db4e59a0423c3a58e780f8d819dc4559b2a8f6b73"
+    },
+    {
+      "path": "lcp/tests/session/test_sessions.py",
+      "sha256": "d682df83697eb22daedda6c287f4038e8fa1ed786aa8d986a07fb97e2b01efd6",
+      "kind": "copied",
+      "source": "lcp/tests/session/test_sessions.py",
+      "source_sha256": "d682df83697eb22daedda6c287f4038e8fa1ed786aa8d986a07fb97e2b01efd6"
+    },
+    {
+      "path": "scripts/check-public.py",
+      "sha256": "464c51ded113abc942899a96ef5f5e02a253b05b0f645fa0d309097d35dc284f",
+      "kind": "generated"
+    },
+    {
+      "path": "server/.dockerignore",
+      "sha256": "1a8de04809f1192ed6b58135c7bd04be6c2d7c22b13f7f2428b6178cb4d368dc",
+      "kind": "adapted",
+      "source": "backend/.dockerignore",
+      "source_sha256": "84f97caf3665d3ea6506e2827a8d3c74a2eee75161704aa80bf7cdfea1e3ceaa",
+      "note": "Exclude local configurations, caches, keys and tests from the server image."
+    },
+    {
+      "path": "server/.env.example",
+      "sha256": "21a480a827c32661aa58a5278fa7d799d90ac2f752bd9f5fa200ab4dc1578f30",
+      "kind": "generated"
+    },
+    {
+      "path": "server/Dockerfile",
+      "sha256": "f98fa7a47c17786d68a0c139c4f1ad44208c1daeddde590f18abef75d76551a6",
+      "kind": "copied",
+      "source": "backend/Dockerfile",
+      "source_sha256": "f98fa7a47c17786d68a0c139c4f1ad44208c1daeddde590f18abef75d76551a6"
+    },
+    {
+      "path": "server/README.md",
+      "sha256": "17110c5fd153de9de1092a224ef24d74daa76e917e62da9ee3b8083d7d889f22",
+      "kind": "generated"
+    },
+    {
+      "path": "server/alembic/env.py",
+      "sha256": "e03c109a6f59254f4fa45657a9abb7111b11c502ac8e72a6e473bd704fa969ff",
+      "kind": "copied",
+      "source": "backend/alembic/env.py",
+      "source_sha256": "e03c109a6f59254f4fa45657a9abb7111b11c502ac8e72a6e473bd704fa969ff"
+    },
+    {
+      "path": "server/alembic/versions/20260709_0001_graph_intelligence_connector_foundation.py",
+      "sha256": "f5708b697732848de7ea26213ced156e247d5cc5c622f1a77dbdd151e05dee22",
+      "kind": "copied",
+      "source": "backend/alembic/versions/20260709_0001_graph_intelligence_connector_foundation.py",
+      "source_sha256": "f5708b697732848de7ea26213ced156e247d5cc5c622f1a77dbdd151e05dee22"
+    },
+    {
+      "path": "server/alembic/versions/20260709_0002_github_connector_v01.py",
+      "sha256": "fa614cf78486d2d30e4cdce1398fe156fdbcf8b8d5944ec60a5ae0be1a9e4d19",
+      "kind": "copied",
+      "source": "backend/alembic/versions/20260709_0002_github_connector_v01.py",
+      "source_sha256": "fa614cf78486d2d30e4cdce1398fe156fdbcf8b8d5944ec60a5ae0be1a9e4d19"
+    },
+    {
+      "path": "server/alembic/versions/20260710_0003_chat_threads_streaming.py",
+      "sha256": "cd5e251205a28a58cf36a3f338aba86100d1e665d0a7a16f6e58a542b17ee830",
+      "kind": "copied",
+      "source": "backend/alembic/versions/20260710_0003_chat_threads_streaming.py",
+      "source_sha256": "cd5e251205a28a58cf36a3f338aba86100d1e665d0a7a16f6e58a542b17ee830"
+    },
+    {
+      "path": "server/alembic/versions/20260710_0004_user_status_preferences.py",
+      "sha256": "b8743e35cbe2b2f63b918ed4b0ae0d8cf374233d56b993a93ec276c583c6607d",
+      "kind": "copied",
+      "source": "backend/alembic/versions/20260710_0004_user_status_preferences.py",
+      "source_sha256": "b8743e35cbe2b2f63b918ed4b0ae0d8cf374233d56b993a93ec276c583c6607d"
+    },
+    {
+      "path": "server/alembic/versions/20260711_0005_ai_runtime_v02.py",
+      "sha256": "33773419fe7c2a8b171d226dce23f7e6fdcd2cb6b2cde5a2b8dc765e57008603",
+      "kind": "copied",
+      "source": "backend/alembic/versions/20260711_0005_ai_runtime_v02.py",
+      "source_sha256": "33773419fe7c2a8b171d226dce23f7e6fdcd2cb6b2cde5a2b8dc765e57008603"
+    },
+    {
+      "path": "server/alembic/versions/20260711_0006_ai_usage_events.py",
+      "sha256": "0a23537ebb5ae2827b0d3f1a43d75ba165e47198aaadb7f56412e07500b573bc",
+      "kind": "copied",
+      "source": "backend/alembic/versions/20260711_0006_ai_usage_events.py",
+      "source_sha256": "0a23537ebb5ae2827b0d3f1a43d75ba165e47198aaadb7f56412e07500b573bc"
+    },
+    {
+      "path": "server/alembic/versions/20260711_0007_graph_change_candidates_v2.py",
+      "sha256": "11279df93e307a9374abe4dd8e219dfa4d3eb02e44170e5105390d86a46c334a",
+      "kind": "copied",
+      "source": "backend/alembic/versions/20260711_0007_graph_change_candidates_v2.py",
+      "source_sha256": "11279df93e307a9374abe4dd8e219dfa4d3eb02e44170e5105390d86a46c334a"
+    },
+    {
+      "path": "server/alembic/versions/20260713_0008_app_device_tokens.py",
+      "sha256": "1712a543b0dd54649c1ce751e70ff4b73bc0a40d0ca0a4879cf46a70dc2efcf4",
+      "kind": "copied",
+      "source": "backend/alembic/versions/20260713_0008_app_device_tokens.py",
+      "source_sha256": "1712a543b0dd54649c1ce751e70ff4b73bc0a40d0ca0a4879cf46a70dc2efcf4"
+    },
+    {
+      "path": "server/alembic/versions/20260714_0009_notes_foundation.py",
+      "sha256": "622153f0673959f87eb5b7de6357e198e4dda94b874e72a35ea7b9b2114df0b1",
+      "kind": "copied",
+      "source": "backend/alembic/versions/20260714_0009_notes_foundation.py",
+      "source_sha256": "622153f0673959f87eb5b7de6357e198e4dda94b874e72a35ea7b9b2114df0b1"
+    },
+    {
+      "path": "server/alembic/versions/20260714_0010_notes_graph_candidates.py",
+      "sha256": "5c49ce55136a8d3638350a31ca5a057dce4ea1817e09c2a8ece10cdc62c5d055",
+      "kind": "copied",
+      "source": "backend/alembic/versions/20260714_0010_notes_graph_candidates.py",
+      "source_sha256": "5c49ce55136a8d3638350a31ca5a057dce4ea1817e09c2a8ece10cdc62c5d055"
+    },
+    {
+      "path": "server/alembic/versions/20260714_0011_notes_encrypted_documents.py",
+      "sha256": "27f646a2dee56c9618227fb2bb25ce1ee45756838a3cffc562f41aa57a0da933",
+      "kind": "copied",
+      "source": "backend/alembic/versions/20260714_0011_notes_encrypted_documents.py",
+      "source_sha256": "27f646a2dee56c9618227fb2bb25ce1ee45756838a3cffc562f41aa57a0da933"
+    },
+    {
+      "path": "server/alembic/versions/20260715_0012_admin_foundation.py",
+      "sha256": "4f05706c81fc8299bc0b1c1e600395ded3b2f4a22244ca322300211dde59c1a7",
+      "kind": "copied",
+      "source": "backend/alembic/versions/20260715_0012_admin_foundation.py",
+      "source_sha256": "4f05706c81fc8299bc0b1c1e600395ded3b2f4a22244ca322300211dde59c1a7"
+    },
+    {
+      "path": "server/alembic/versions/20260715_0013_admin_security_hardening.py",
+      "sha256": "a27587bbaf695a39cdda267d552aca3e704573d0798d9c138e17268f2ed5c636",
+      "kind": "copied",
+      "source": "backend/alembic/versions/20260715_0013_admin_security_hardening.py",
+      "source_sha256": "a27587bbaf695a39cdda267d552aca3e704573d0798d9c138e17268f2ed5c636"
+    },
+    {
+      "path": "server/alembic/versions/20260715_0014_security_center.py",
+      "sha256": "013067718b888e2818d0e93700da722e5dbbe2c72453b6ae7273445534ea5ee8",
+      "kind": "copied",
+      "source": "backend/alembic/versions/20260715_0014_security_center.py",
+      "source_sha256": "013067718b888e2818d0e93700da722e5dbbe2c72453b6ae7273445534ea5ee8"
+    },
+    {
+      "path": "server/alembic/versions/20260715_0015_operations_center.py",
+      "sha256": "8ae70dc6034b9b94650b0a18d96a3086dbb4d2ac1f5e8dbb14c2e36831711352",
+      "kind": "copied",
+      "source": "backend/alembic/versions/20260715_0015_operations_center.py",
+      "source_sha256": "8ae70dc6034b9b94650b0a18d96a3086dbb4d2ac1f5e8dbb14c2e36831711352"
+    },
+    {
+      "path": "server/alembic/versions/20260715_0016_support_center.py",
+      "sha256": "c4c4b5e9d3ac5846deac19a688edd88e3db8bbbc825ed02c2625909733e9db10",
+      "kind": "copied",
+      "source": "backend/alembic/versions/20260715_0016_support_center.py",
+      "source_sha256": "c4c4b5e9d3ac5846deac19a688edd88e3db8bbbc825ed02c2625909733e9db10"
+    },
+    {
+      "path": "server/alembic/versions/20260715_0017_owner_bootstrap_enrollment.py",
+      "sha256": "42bda78efcb0103029e4b7ff381530bbc3cb8a3be8357cec7a758ee16581f1c3",
+      "kind": "copied",
+      "source": "backend/alembic/versions/20260715_0017_owner_bootstrap_enrollment.py",
+      "source_sha256": "42bda78efcb0103029e4b7ff381530bbc3cb8a3be8357cec7a758ee16581f1c3"
+    },
+    {
+      "path": "server/alembic/versions/20260715_0018_recovery_code_rotation.py",
+      "sha256": "22e13d7db2aad730b6fe3d4957364656a7b9d0bc7c03c7abd6aceb632101abc3",
+      "kind": "copied",
+      "source": "backend/alembic/versions/20260715_0018_recovery_code_rotation.py",
+      "source_sha256": "22e13d7db2aad730b6fe3d4957364656a7b9d0bc7c03c7abd6aceb632101abc3"
+    },
+    {
+      "path": "server/alembic/versions/20260804_0019_central_identity_provider.py",
+      "sha256": "e6a68350f2ef8b78970b16ebbab84e88f1e2df3cdfc3fc3a88165d4a5db25910",
+      "kind": "copied",
+      "source": "backend/alembic/versions/20260804_0019_central_identity_provider.py",
+      "source_sha256": "e6a68350f2ef8b78970b16ebbab84e88f1e2df3cdfc3fc3a88165d4a5db25910"
+    },
+    {
+      "path": "server/alembic/versions/20260809_0020_lurg_notes_auth_application.py",
+      "sha256": "66aa39a29fd145b4dd96b36e2f0f2133edc9c7d0aea1191b188a070215170359",
+      "kind": "copied",
+      "source": "backend/alembic/versions/20260809_0020_lurg_notes_auth_application.py",
+      "source_sha256": "66aa39a29fd145b4dd96b36e2f0f2133edc9c7d0aea1191b188a070215170359"
+    },
+    {
+      "path": "server/alembic/versions/20260814_0021_push_app_scope.py",
+      "sha256": "ad7970e69c92676110a3e752cfa370cb19c98166be2d19c92af4b7f592867a53",
+      "kind": "copied",
+      "source": "backend/alembic/versions/20260814_0021_push_app_scope.py",
+      "source_sha256": "ad7970e69c92676110a3e752cfa370cb19c98166be2d19c92af4b7f592867a53"
+    },
+    {
+      "path": "server/alembic/versions/20260814_0022_account_moderation.py",
+      "sha256": "f1b30ec8c2fc86305e55536ba942d631e9302a58f9d423c6c27cc36d117bd1f0",
+      "kind": "copied",
+      "source": "backend/alembic/versions/20260814_0022_account_moderation.py",
+      "source_sha256": "f1b30ec8c2fc86305e55536ba942d631e9302a58f9d423c6c27cc36d117bd1f0"
+    },
+    {
+      "path": "server/alembic/versions/20260814_0023_push_token_deduplication.py",
+      "sha256": "682c47cb72022bc002900ad92a3729446e7b1d2781a30f2fc6aa793d4ca6afe4",
+      "kind": "copied",
+      "source": "backend/alembic/versions/20260814_0023_push_token_deduplication.py",
+      "source_sha256": "682c47cb72022bc002900ad92a3729446e7b1d2781a30f2fc6aa793d4ca6afe4"
+    },
+    {
+      "path": "server/alembic/versions/20260819_0024_notes_e2ee_v2_devices.py",
+      "sha256": "37ff3df65690f943fa6d1da0d0e88954608d5e7ccfb0e42489732b2e99077ca3",
+      "kind": "copied",
+      "source": "backend/alembic/versions/20260819_0024_notes_e2ee_v2_devices.py",
+      "source_sha256": "37ff3df65690f943fa6d1da0d0e88954608d5e7ccfb0e42489732b2e99077ca3"
+    },
+    {
+      "path": "server/alembic/versions/20261003_0025_security_notes_sync.py",
+      "sha256": "6bf4475941525657c4131c8146af41788d21ec5aef8f9bb68069829078c0274a",
+      "kind": "copied",
+      "source": "backend/alembic/versions/20261003_0025_security_notes_sync.py",
+      "source_sha256": "6bf4475941525657c4131c8146af41788d21ec5aef8f9bb68069829078c0274a"
+    },
+    {
+      "path": "server/alembic/versions/20261003_0026_embeddings_halfvec_index.py",
+      "sha256": "30573c64590ca0c6171942b011ca0bc1e3c291364921b2a7344a806621b3c827",
+      "kind": "copied",
+      "source": "backend/alembic/versions/20261003_0026_embeddings_halfvec_index.py",
+      "source_sha256": "30573c64590ca0c6171942b011ca0bc1e3c291364921b2a7344a806621b3c827"
+    },
+    {
+      "path": "server/alembic/versions/20261008_0027_app_release_pushes.py",
+      "sha256": "bc9e42ecf0d8615536a3cbb35dda80c6dc0b4043d928242a2034ae0102d80efd",
+      "kind": "copied",
+      "source": "backend/alembic/versions/20261008_0027_app_release_pushes.py",
+      "source_sha256": "bc9e42ecf0d8615536a3cbb35dda80c6dc0b4043d928242a2034ae0102d80efd"
+    },
+    {
+      "path": "server/alembic.ini",
+      "sha256": "a55414385669cb2b8c2df84bc5e6a9e77af6578fec3ed9f97528ee97ac96623b",
+      "kind": "copied",
+      "source": "backend/alembic.ini",
+      "source_sha256": "a55414385669cb2b8c2df84bc5e6a9e77af6578fec3ed9f97528ee97ac96623b"
+    },
+    {
+      "path": "server/app/__init__.py",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "kind": "copied",
+      "source": "backend/app/__init__.py",
+      "source_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "path": "server/app/ai.py",
+      "sha256": "d2e3fd6bde34a6fd104cb9527247025351ea895499c3fa0c88c7fdbf5eb7b966",
+      "kind": "copied",
+      "source": "backend/app/ai.py",
+      "source_sha256": "d2e3fd6bde34a6fd104cb9527247025351ea895499c3fa0c88c7fdbf5eb7b966"
+    },
+    {
+      "path": "server/app/auth.py",
+      "sha256": "5bb4856a27be8f6d5439e91462c217cdf09a204a91b421ef9deb710980fa2aba",
+      "kind": "copied",
+      "source": "backend/app/auth.py",
+      "source_sha256": "5bb4856a27be8f6d5439e91462c217cdf09a204a91b421ef9deb710980fa2aba"
+    },
+    {
+      "path": "server/app/config.py",
+      "sha256": "1334e1abc3b59fde93926124cd92f9e0b2b0835cad583ba01f830df60704af07",
+      "kind": "adapted",
+      "source": "backend/app/config.py",
+      "source_sha256": "396db5011a08e193559eaf97f62bf0a5e4a8701c731438fff2561e5f5f878fd3",
+      "note": "Remove personal owner mailbox default and select lurg_notes auth application."
+    },
+    {
+      "path": "server/app/core/__init__.py",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "kind": "copied",
+      "source": "backend/app/core/__init__.py",
+      "source_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "path": "server/app/core/contracts.py",
+      "sha256": "d351ee6e3ae886f3283988c59c128e63574da3dd542de2e0420eb5c7b1df8db5",
+      "kind": "copied",
+      "source": "backend/app/core/contracts.py",
+      "source_sha256": "d351ee6e3ae886f3283988c59c128e63574da3dd542de2e0420eb5c7b1df8db5"
+    },
+    {
+      "path": "server/app/db.py",
+      "sha256": "3c96d701f4cf83501c05242edda0f387c92cb79d6f91c96c9e3611d5866d6999",
+      "kind": "copied",
+      "source": "backend/app/db.py",
+      "source_sha256": "3c96d701f4cf83501c05242edda0f387c92cb79d6f91c96c9e3611d5866d6999"
+    },
+    {
+      "path": "server/app/gemini.py",
+      "sha256": "c292a6a1232c549a99a910c8962a59f7426f453debaf41b7e7150af7d2029464",
+      "kind": "copied",
+      "source": "backend/app/gemini.py",
+      "source_sha256": "c292a6a1232c549a99a910c8962a59f7426f453debaf41b7e7150af7d2029464"
+    },
+    {
+      "path": "server/app/main.py",
+      "sha256": "95462e6ff984b85746011484e47b9920e07f16c8735fee0f92b0be74bf3726c8",
+      "kind": "adapted",
+      "source": "backend/app/main.py",
+      "source_sha256": "8e4f10857a35d8d67c125d6ab536f9049ed90216ff0042d9a52dc6c0a8a5959c",
+      "note": "Standalone Notes entry point with required shared routers and workers."
+    },
+    {
+      "path": "server/app/modules/__init__.py",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "kind": "copied",
+      "source": "backend/app/modules/__init__.py",
+      "source_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "path": "server/app/modules/admin/__init__.py",
+      "sha256": "f035a43605b6ccea89d98b9276f199c16fe1a1802fa62d87454f3fc387430d77",
+      "kind": "copied",
+      "source": "backend/app/modules/admin/__init__.py",
+      "source_sha256": "f035a43605b6ccea89d98b9276f199c16fe1a1802fa62d87454f3fc387430d77"
+    },
+    {
+      "path": "server/app/modules/admin/accounts.py",
+      "sha256": "6806d263cea4e39eeca63f331c8e5cadacdb0a381077d8229c525ebf0c795d6e",
+      "kind": "copied",
+      "source": "backend/app/modules/admin/accounts.py",
+      "source_sha256": "6806d263cea4e39eeca63f331c8e5cadacdb0a381077d8229c525ebf0c795d6e"
+    },
+    {
+      "path": "server/app/modules/app/push.py",
+      "sha256": "587cb98577611d7da608863c819da30084fcce09f11e64cc29ad6ff7db34da4b",
+      "kind": "copied",
+      "source": "backend/app/modules/app/push.py",
+      "source_sha256": "587cb98577611d7da608863c819da30084fcce09f11e64cc29ad6ff7db34da4b"
+    },
+    {
+      "path": "server/app/modules/app/releases.py",
+      "sha256": "cd73ca9cb65bcc5a5c6641c2d9f0cc0adc13e3b8de8df075ffcec20bd8dc99c5",
+      "kind": "copied",
+      "source": "backend/app/modules/app/releases.py",
+      "source_sha256": "cd73ca9cb65bcc5a5c6641c2d9f0cc0adc13e3b8de8df075ffcec20bd8dc99c5"
+    },
+    {
+      "path": "server/app/modules/app/router.py",
+      "sha256": "2728bc65e9180709dbe829aac28e6857184cb5b6f7308bd8a06f0083a06e6b11",
+      "kind": "copied",
+      "source": "backend/app/modules/app/router.py",
+      "source_sha256": "2728bc65e9180709dbe829aac28e6857184cb5b6f7308bd8a06f0083a06e6b11"
+    },
+    {
+      "path": "server/app/modules/chat/__init__.py",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "kind": "copied",
+      "source": "backend/app/modules/chat/__init__.py",
+      "source_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "path": "server/app/modules/chat/personal_facts.py",
+      "sha256": "e36d218fc1c11d729d95fa3e1e616201347c32564bf6d83a917bffedda2873bf",
+      "kind": "copied",
+      "source": "backend/app/modules/chat/personal_facts.py",
+      "source_sha256": "e36d218fc1c11d729d95fa3e1e616201347c32564bf6d83a917bffedda2873bf"
+    },
+    {
+      "path": "server/app/modules/chat/router.py",
+      "sha256": "125863f75be7397d2a093dfa70763078c41763885ac28ee14066e164f095c399",
+      "kind": "copied",
+      "source": "backend/app/modules/chat/router.py",
+      "source_sha256": "125863f75be7397d2a093dfa70763078c41763885ac28ee14066e164f095c399"
+    },
+    {
+      "path": "server/app/modules/graph/__init__.py",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "kind": "copied",
+      "source": "backend/app/modules/graph/__init__.py",
+      "source_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "path": "server/app/modules/graph/resolver.py",
+      "sha256": "5f1351291a4a1a104105b3a3edf5f97b98de0a87660506baf7fa8f14862d0e5a",
+      "kind": "copied",
+      "source": "backend/app/modules/graph/resolver.py",
+      "source_sha256": "5f1351291a4a1a104105b3a3edf5f97b98de0a87660506baf7fa8f14862d0e5a"
+    },
+    {
+      "path": "server/app/modules/graph/router.py",
+      "sha256": "484fb5660279093f46d40c3e96546dc9734aae48e5b85c6932357b61cbe6d5f1",
+      "kind": "copied",
+      "source": "backend/app/modules/graph/router.py",
+      "source_sha256": "484fb5660279093f46d40c3e96546dc9734aae48e5b85c6932357b61cbe6d5f1"
+    },
+    {
+      "path": "server/app/modules/identity/__init__.py",
+      "sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b",
+      "kind": "copied",
+      "source": "backend/app/modules/identity/__init__.py",
+      "source_sha256": "01ba4719c80b6fe911b091a7c05124b64eeece964e09c058ef8f9805daca546b"
+    },
+    {
+      "path": "server/app/modules/identity/central_router.py",
+      "sha256": "b0cad08ae21ea0a6768969d27d1c8a76c6fcae5ca3f24446a88cc0c50a0f236d",
+      "kind": "copied",
+      "source": "backend/app/modules/identity/central_router.py",
+      "source_sha256": "b0cad08ae21ea0a6768969d27d1c8a76c6fcae5ca3f24446a88cc0c50a0f236d"
+    },
+    {
+      "path": "server/app/modules/identity/email.py",
+      "sha256": "ff891b9d02341e2c338c6e45820a747d28d482cf292495985dd85ec766256635",
+      "kind": "copied",
+      "source": "backend/app/modules/identity/email.py",
+      "source_sha256": "ff891b9d02341e2c338c6e45820a747d28d482cf292495985dd85ec766256635"
+    },
+    {
+      "path": "server/app/modules/identity/router.py",
+      "sha256": "5c5bcb71f852467192135428393229f295e1bd571314d552b05475d2b355f94f",
+      "kind": "copied",
+      "source": "backend/app/modules/identity/router.py",
+      "source_sha256": "5c5bcb71f852467192135428393229f295e1bd571314d552b05475d2b355f94f"
+    },
+    {
+      "path": "server/app/modules/notes/__init__.py",
+      "sha256": "288d4f1ce860da352e678c6d18de9862f3d0feb48b161f26c46b36ce3bfc2543",
+      "kind": "copied",
+      "source": "backend/app/modules/notes/__init__.py",
+      "source_sha256": "288d4f1ce860da352e678c6d18de9862f3d0feb48b161f26c46b36ce3bfc2543"
+    },
+    {
+      "path": "server/app/modules/notes/ai_service.py",
+      "sha256": "531e1c68002d056ee58ac9fa9bdd5cf16087270c7fa83071e802f4703e285f16",
+      "kind": "copied",
+      "source": "backend/app/modules/notes/ai_service.py",
+      "source_sha256": "531e1c68002d056ee58ac9fa9bdd5cf16087270c7fa83071e802f4703e285f16"
+    },
+    {
+      "path": "server/app/modules/notes/e2ee.py",
+      "sha256": "11d3accf99152c3f88e355ba346ec6816de1efbe51b58c5610d9a6bdace7ece2",
+      "kind": "copied",
+      "source": "backend/app/modules/notes/e2ee.py",
+      "source_sha256": "11d3accf99152c3f88e355ba346ec6816de1efbe51b58c5610d9a6bdace7ece2"
+    },
+    {
+      "path": "server/app/modules/notes/prompts.py",
+      "sha256": "3c8fce11800f589049c34abcdd795db5cb803ab951dcb917921bb9b7b07c1a4c",
+      "kind": "copied",
+      "source": "backend/app/modules/notes/prompts.py",
+      "source_sha256": "3c8fce11800f589049c34abcdd795db5cb803ab951dcb917921bb9b7b07c1a4c"
+    },
+    {
+      "path": "server/app/modules/notes/router.py",
+      "sha256": "2d36eb5abf34644a4e129cfb77181ba0d2d78b1a05bea009f1e22a6704b1e30a",
+      "kind": "copied",
+      "source": "backend/app/modules/notes/router.py",
+      "source_sha256": "2d36eb5abf34644a4e129cfb77181ba0d2d78b1a05bea009f1e22a6704b1e30a"
+    },
+    {
+      "path": "server/app/modules/notes/schemas.py",
+      "sha256": "1ec91e5d2f003bbe9a9b416ce7e762f3029b905a44e21136eb6cba21995f3556",
+      "kind": "copied",
+      "source": "backend/app/modules/notes/schemas.py",
+      "source_sha256": "1ec91e5d2f003bbe9a9b416ce7e762f3029b905a44e21136eb6cba21995f3556"
+    },
+    {
+      "path": "server/app/modules/sync/__init__.py",
+      "sha256": "befb318129c1567c20c42d6b740677eb76996bce20b9936b255f96ebe9133379",
+      "kind": "copied",
+      "source": "backend/app/modules/sync/__init__.py",
+      "source_sha256": "befb318129c1567c20c42d6b740677eb76996bce20b9936b255f96ebe9133379"
+    },
+    {
+      "path": "server/app/modules/sync/outbox.py",
+      "sha256": "4b8b22f15095bbd99c096f1a25bbc118f0d0e5331283fa91c31eaf2bcd313ded",
+      "kind": "copied",
+      "source": "backend/app/modules/sync/outbox.py",
+      "source_sha256": "4b8b22f15095bbd99c096f1a25bbc118f0d0e5331283fa91c31eaf2bcd313ded"
+    },
+    {
+      "path": "server/app/openrouter.py",
+      "sha256": "ef49bae41a712ec4ffdc1d846e89f5f6f9c0e67499020689a3e1b9d5e506959e",
+      "kind": "copied",
+      "source": "backend/app/openrouter.py",
+      "source_sha256": "ef49bae41a712ec4ffdc1d846e89f5f6f9c0e67499020689a3e1b9d5e506959e"
+    },
+    {
+      "path": "server/app/prompts.py",
+      "sha256": "c309b1174d11fcd42e908fdaed30e46056f6affc86d03ca5912e8090c3ea4430",
+      "kind": "copied",
+      "source": "backend/app/prompts.py",
+      "source_sha256": "c309b1174d11fcd42e908fdaed30e46056f6affc86d03ca5912e8090c3ea4430"
+    },
+    {
+      "path": "server/app/provider_stream.py",
+      "sha256": "95ddd8e5e164632ca18a0def7858387bf615c8b71326eb776d4fc96220eacbfa",
+      "kind": "copied",
+      "source": "backend/app/provider_stream.py",
+      "source_sha256": "95ddd8e5e164632ca18a0def7858387bf615c8b71326eb776d4fc96220eacbfa"
+    },
+    {
+      "path": "server/app/runtime.py",
+      "sha256": "c9f0e49d6895f75965e631ed9515e9ca1de24c603d56d167a465974b4e33853b",
+      "kind": "copied",
+      "source": "backend/app/runtime.py",
+      "source_sha256": "c9f0e49d6895f75965e631ed9515e9ca1de24c603d56d167a465974b4e33853b"
+    },
+    {
+      "path": "server/app/safe_fetch.py",
+      "sha256": "5de7f5e7be254e42c89ebe758d1fea3fae28250a7ef298219f32b14d7bf4f1f7",
+      "kind": "copied",
+      "source": "backend/app/safe_fetch.py",
+      "source_sha256": "5de7f5e7be254e42c89ebe758d1fea3fae28250a7ef298219f32b14d7bf4f1f7"
+    },
+    {
+      "path": "server/app/schemas.py",
+      "sha256": "08184bb28e7ee9d34814c0c611e019bedd109e3f7f7089f091fb8c38505895c4",
+      "kind": "copied",
+      "source": "backend/app/schemas.py",
+      "source_sha256": "08184bb28e7ee9d34814c0c611e019bedd109e3f7f7089f091fb8c38505895c4"
+    },
+    {
+      "path": "server/app/search.py",
+      "sha256": "cf3afc5ae8a91bc1c4bb49977a1330cedbe3bf4bd0a2d762cbb810c4a8a31172",
+      "kind": "copied",
+      "source": "backend/app/search.py",
+      "source_sha256": "cf3afc5ae8a91bc1c4bb49977a1330cedbe3bf4bd0a2d762cbb810c4a8a31172"
+    },
+    {
+      "path": "server/requirements-dev.txt",
+      "sha256": "f76238a5c2ae356b5e99b49664ad5024c8a14e8a16e2090bdc07d1449f779c68",
+      "kind": "copied",
+      "source": "backend/requirements-dev.txt",
+      "source_sha256": "f76238a5c2ae356b5e99b49664ad5024c8a14e8a16e2090bdc07d1449f779c68"
+    },
+    {
+      "path": "server/requirements.txt",
+      "sha256": "d3696a2cddc9006f9943c976b1ee514d444b9bcf21beb994926cc624f291b5bf",
+      "kind": "copied",
+      "source": "backend/requirements.txt",
+      "source_sha256": "d3696a2cddc9006f9943c976b1ee514d444b9bcf21beb994926cc624f291b5bf"
+    },
+    {
+      "path": "server/schema.sql",
+      "sha256": "3a0a40363c904b63097bffb497f16ab8ec2c4222deebabf7ca7f47ab8b82bcfc",
+      "kind": "copied",
+      "source": "backend/schema.sql",
+      "source_sha256": "3a0a40363c904b63097bffb497f16ab8ec2c4222deebabf7ca7f47ab8b82bcfc"
+    },
+    {
+      "path": "server/scripts/init_database.py",
+      "sha256": "fbed0e0a0f22f6204b16216c4c8223d2dd51542abca5ca86d1c40d298b559821",
+      "kind": "generated"
+    },
+    {
+      "path": "server/tests/conftest.py",
+      "sha256": "ae4948a969b6eff16b4adede1237a77589013769205e8a5d236f629e6381d8ee",
+      "kind": "generated"
+    },
+    {
+      "path": "server/tests/test_ai_runtime.py",
+      "sha256": "bf0d85d038a63deacaf509692c37702e82ddad4933c46f80928912c492cedb03",
+      "kind": "copied",
+      "source": "backend/tests/test_ai_runtime.py",
+      "source_sha256": "bf0d85d038a63deacaf509692c37702e82ddad4933c46f80928912c492cedb03"
+    },
+    {
+      "path": "server/tests/test_app_release_pushes.py",
+      "sha256": "33d39954158c464b86cf6ed2c5fb54d762ddae66a312ca447c7c2385ace0cef5",
+      "kind": "copied",
+      "source": "backend/tests/test_app_release_pushes.py",
+      "source_sha256": "33d39954158c464b86cf6ed2c5fb54d762ddae66a312ca447c7c2385ace0cef5"
+    },
+    {
+      "path": "server/tests/test_central_identity.py",
+      "sha256": "4773dc1855cdb8046b570750e7519d1e7e8d4543b0a42ca0c33d88a79fadd35d",
+      "kind": "copied",
+      "source": "backend/tests/test_central_identity.py",
+      "source_sha256": "4773dc1855cdb8046b570750e7519d1e7e8d4543b0a42ca0c33d88a79fadd35d"
+    },
+    {
+      "path": "server/tests/test_internal_session_authority.py",
+      "sha256": "dac40085940b68dd7455afbf2bde8395238355b049c413598b17a1801facabee",
+      "kind": "copied",
+      "source": "backend/tests/test_internal_session_authority.py",
+      "source_sha256": "dac40085940b68dd7455afbf2bde8395238355b049c413598b17a1801facabee"
+    },
+    {
+      "path": "server/tests/test_notes_block_types_v2.py",
+      "sha256": "9d60a59d3da7af1b9585a10200cbd9574bb8639130f465f1021d44870e80ff18",
+      "kind": "copied",
+      "source": "backend/tests/test_notes_block_types_v2.py",
+      "source_sha256": "9d60a59d3da7af1b9585a10200cbd9574bb8639130f465f1021d44870e80ff18"
+    },
+    {
+      "path": "server/tests/test_notes_e2ee_v2.py",
+      "sha256": "e856117ab97b7eaf52afb1f3fad45eae8dd84622dc8231d2b0dd04ff6edaa0a6",
+      "kind": "copied",
+      "source": "backend/tests/test_notes_e2ee_v2.py",
+      "source_sha256": "e856117ab97b7eaf52afb1f3fad45eae8dd84622dc8231d2b0dd04ff6edaa0a6"
+    },
+    {
+      "path": "server/tests/test_notes_graph.py",
+      "sha256": "ed262c272af4f5b9bb0efc628abfa859902d7291937603db59b0224637552700",
+      "kind": "copied",
+      "source": "backend/tests/test_notes_graph.py",
+      "source_sha256": "ed262c272af4f5b9bb0efc628abfa859902d7291937603db59b0224637552700"
+    },
+    {
+      "path": "server/tests/test_notes_phase1.py",
+      "sha256": "bbd1eea1f3f6da4bfb77f6f9af5cd370ee1ca5b8da6f7495e466a647dc63ab18",
+      "kind": "copied",
+      "source": "backend/tests/test_notes_phase1.py",
+      "source_sha256": "bbd1eea1f3f6da4bfb77f6f9af5cd370ee1ca5b8da6f7495e466a647dc63ab18"
+    },
+    {
+      "path": "server/tests/test_outbox_delivery.py",
+      "sha256": "53e032d616b05d776905ad546df3a3724844de1771dbfd34056fec6d53fecf3d",
+      "kind": "copied",
+      "source": "backend/tests/test_outbox_delivery.py",
+      "source_sha256": "53e032d616b05d776905ad546df3a3724844de1771dbfd34056fec6d53fecf3d"
+    },
+    {
+      "path": "server/tests/test_personal_facts_context.py",
+      "sha256": "852653abcc1661c4d988f50e854e65955088c9ef83a0f5219b52d4e3e0f8ae9c",
+      "kind": "copied",
+      "source": "backend/tests/test_personal_facts_context.py",
+      "source_sha256": "852653abcc1661c4d988f50e854e65955088c9ef83a0f5219b52d4e3e0f8ae9c"
+    },
+    {
+      "path": "server/tests/test_postgres_notes_realtime.py",
+      "sha256": "e67f58692b8ebdb00b400b35ecb8435d8ae8a4a28ab5b25ffba39aba8fcbe0fb",
+      "kind": "copied",
+      "source": "backend/tests/test_postgres_notes_realtime.py",
+      "source_sha256": "e67f58692b8ebdb00b400b35ecb8435d8ae8a4a28ab5b25ffba39aba8fcbe0fb"
+    },
+    {
+      "path": "server/tests/test_postgres_security_sync.py",
+      "sha256": "cefcde0136b9ac686fdc9ffe8b8d30f0bee123c3055c381aecbc71ee8ba64a5d",
+      "kind": "copied",
+      "source": "backend/tests/test_postgres_security_sync.py",
+      "source_sha256": "cefcde0136b9ac686fdc9ffe8b8d30f0bee123c3055c381aecbc71ee8ba64a5d"
+    },
+    {
+      "path": "server/tests/test_prompts.py",
+      "sha256": "e9c9d2dd842a877f7cab27d8566c9e78003dd73a6ac54b8a72b5144e6fe3e262",
+      "kind": "copied",
+      "source": "backend/tests/test_prompts.py",
+      "source_sha256": "e9c9d2dd842a877f7cab27d8566c9e78003dd73a6ac54b8a72b5144e6fe3e262"
+    },
+    {
+      "path": "server/tests/test_safe_fetch.py",
+      "sha256": "b2fc2212a0204f8c91b873b33041c4863b3215846d7bf3fadaf0acac649ebf07",
+      "kind": "copied",
+      "source": "backend/tests/test_safe_fetch.py",
+      "source_sha256": "b2fc2212a0204f8c91b873b33041c4863b3215846d7bf3fadaf0acac649ebf07"
+    },
+    {
+      "path": "server/tests/test_security_sync_regressions.py",
+      "sha256": "1d2b3fd651ce7cba6e7b0f7c0c72fcab1ee504a31fe41e8606b8dd5ddae3ce8a",
+      "kind": "copied",
+      "source": "backend/tests/test_security_sync_regressions.py",
+      "source_sha256": "1d2b3fd651ce7cba6e7b0f7c0c72fcab1ee504a31fe41e8606b8dd5ddae3ce8a"
+    },
+    {
+      "path": "website/README.md",
+      "sha256": "0c3d39bec340be5ca86bc272bd14323a9888f0fa486d07e851bda7ee0d8b55f2",
+      "kind": "generated"
+    },
+    {
+      "path": "website/app/globals.css",
+      "sha256": "01b91cfb1009b140ac4cb6f360e943dc87c6a28a7749206e0e70a619b5ca59a1",
+      "kind": "copied",
+      "source": "frontend/app/globals.css",
+      "source_sha256": "01b91cfb1009b140ac4cb6f360e943dc87c6a28a7749206e0e70a619b5ca59a1"
+    },
+    {
+      "path": "website/app/layout.tsx",
+      "sha256": "b00e4e9753acc8549ad5fb0c147b8cf21896c9b65b988d69ef73513fb2338cd3",
+      "kind": "copied",
+      "source": "frontend/app/layout.tsx",
+      "source_sha256": "b00e4e9753acc8549ad5fb0c147b8cf21896c9b65b988d69ef73513fb2338cd3"
+    },
+    {
+      "path": "website/app/page.tsx",
+      "sha256": "065ef5b450f7b655620d97ffec11da4a3275d104cc23dd9d83c76ede58404138",
+      "kind": "copied",
+      "source": "frontend/app/notes/page.tsx",
+      "source_sha256": "065ef5b450f7b655620d97ffec11da4a3275d104cc23dd9d83c76ede58404138"
+    },
+    {
+      "path": "website/app/public.css",
+      "sha256": "d92003649a8f96135b443f576a01232484798372af2c71ec61c19c31828a073b",
+      "kind": "copied",
+      "source": "frontend/app/public.css",
+      "source_sha256": "d92003649a8f96135b443f576a01232484798372af2c71ec61c19c31828a073b"
+    },
+    {
+      "path": "website/components/PublicChrome.tsx",
+      "sha256": "0aa221651a5d058ab79b1404515eb180d3ce2ef03ccbde250adb5796ec8e6a48",
+      "kind": "copied",
+      "source": "frontend/components/PublicChrome.tsx",
+      "source_sha256": "0aa221651a5d058ab79b1404515eb180d3ce2ef03ccbde250adb5796ec8e6a48"
+    },
+    {
+      "path": "website/components/SiteMotion.tsx",
+      "sha256": "1c04795fd71058c6962d1b1a5c539ea96bdf21149ade9734a09dc5b2787f689e",
+      "kind": "copied",
+      "source": "frontend/components/SiteMotion.tsx",
+      "source_sha256": "1c04795fd71058c6962d1b1a5c539ea96bdf21149ade9734a09dc5b2787f689e"
+    },
+    {
+      "path": "website/lib/seo.ts",
+      "sha256": "381299e517450228c3a3feab7397a724990aac3e8b46792ba559ab1a807aa0b1",
+      "kind": "copied",
+      "source": "frontend/lib/seo.ts",
+      "source_sha256": "381299e517450228c3a3feab7397a724990aac3e8b46792ba559ab1a807aa0b1"
+    },
+    {
+      "path": "website/next-env.d.ts",
+      "sha256": "85ae5aee75f011967cf2d25cbc342f62d69314e9d925f7f4aa3456fc2cffcca6",
+      "kind": "copied",
+      "source": "frontend/next-env.d.ts",
+      "source_sha256": "85ae5aee75f011967cf2d25cbc342f62d69314e9d925f7f4aa3456fc2cffcca6"
+    },
+    {
+      "path": "website/next.config.ts",
+      "sha256": "e2db3141ac6c00ca29778ecabbfb18b7c816c7d21d47d6f09adcac5a2c33ceb9",
+      "kind": "adapted",
+      "source": "frontend/next.config.ts",
+      "source_sha256": "4cecb8ebdce2fe2599cd013f15a214d36b25bffe29d49fafb3dbe1d3a843c9da",
+      "note": "Standalone tracing is limited to the website directory."
+    },
+    {
+      "path": "website/package-lock.json",
+      "sha256": "5f46223b1d5542a69945daea0544e21b151404fd7a04e0a4ca20c7eb7aff7381",
+      "kind": "copied",
+      "source": "frontend/package-lock.json",
+      "source_sha256": "5f46223b1d5542a69945daea0544e21b151404fd7a04e0a4ca20c7eb7aff7381"
+    },
+    {
+      "path": "website/package.json",
+      "sha256": "880df00e77eca15946a981102d53aed49dcc06f9e5b2cd075392014bc65ac4ac",
+      "kind": "copied",
+      "source": "frontend/package.json",
+      "source_sha256": "880df00e77eca15946a981102d53aed49dcc06f9e5b2cd075392014bc65ac4ac"
+    },
+    {
+      "path": "website/postcss.config.mjs",
+      "sha256": "18ee7304c0d105913018b93acde48e3dee657a7f7463fa64ad6e2b2efaa6031d",
+      "kind": "copied",
+      "source": "frontend/postcss.config.mjs",
+      "source_sha256": "18ee7304c0d105913018b93acde48e3dee657a7f7463fa64ad6e2b2efaa6031d"
+    },
+    {
+      "path": "website/public/favicon.ico",
+      "sha256": "7ca5200f6ad3812f66913362b37a9654ebe6d3a41709ca5beaff499694321d79",
+      "kind": "copied",
+      "source": "frontend/public/favicon.ico",
+      "source_sha256": "7ca5200f6ad3812f66913362b37a9654ebe6d3a41709ca5beaff499694321d79"
+    },
+    {
+      "path": "website/tailwind.config.ts",
+      "sha256": "c22a4314c76da6f69cd4b03b68c8aaa65b9d79f69fcb9325edcf41560883aaa2",
+      "kind": "copied",
+      "source": "frontend/tailwind.config.ts",
+      "source_sha256": "c22a4314c76da6f69cd4b03b68c8aaa65b9d79f69fcb9325edcf41560883aaa2"
+    },
+    {
+      "path": "website/tsconfig.json",
+      "sha256": "d4a6e7dc76545a8afe36732c66fc2d202434afca327451210634095cac066c2c",
+      "kind": "copied",
+      "source": "frontend/tsconfig.json",
+      "source_sha256": "d4a6e7dc76545a8afe36732c66fc2d202434afca327451210634095cac066c2c"
+    }
+  ]
+}

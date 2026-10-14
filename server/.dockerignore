@@ -1,0 +1,13 @@
+.env
+.env.*
+!.env.example
+.venv
+__pycache__
+*.pyc
+.pytest_cache
+.ruff_cache
+*.pem
+*.key
+*.p12
+firebase-service-account*.json
+service-account*.json
